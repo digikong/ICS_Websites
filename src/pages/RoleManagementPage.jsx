@@ -20,7 +20,7 @@ import {
   UsersRound,
 } from "lucide-react";
 
-import { PRODUCT_SEED } from "./Products";
+import { PRODUCT_SEED } from "../data/productData";
 import { CAREER_SEED } from "./Careers";
 import { GALLERY_SEED } from "./Gallery";
 import {
@@ -741,7 +741,11 @@ function SiteConfigManager({ notify }) {
 
   const save = (event) => {
     event.preventDefault();
-    saveSiteConfig(form);
+    const nextConfig = {
+      ...form,
+      phoneHref: "tel:" + String(form.phone || "").replace(/\\D/g, ""),
+    };
+    saveSiteConfig(nextConfig);
     logActivity("Update Site Settings", "Company, contact and branding settings");
     notify("Site settings saved.");
   };
