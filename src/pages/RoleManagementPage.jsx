@@ -29,6 +29,8 @@ import {
   ensureSystemUsers,
   getActivityLogs,
   getArchivedLogs,
+  getEnquiries,
+  saveEnquiries,
   getCareers,
   getGallery,
   getPresence,
@@ -51,7 +53,7 @@ import "./RoleManagementPage.css";
 const ROLE_CONFIG = {
   superadmin: {
     label: "Superadmin",
-    tabs: ["Dashboard", "Products", "Careers", "Gallery", "Users", "Activities"],
+    tabs: ["Dashboard", "Products", "Careers", "Gallery", "Enquiries", "Users", "Activities"],
   },
   admin: {
     label: "Admin",
@@ -208,6 +210,10 @@ function RoleManagementPage({ role = "superadmin" }) {
             />
           )}
 
+          {activeTab === "Enquiries" && role === "superadmin" && (
+            <EnquiryManager notify={notify} />
+          )}
+
           {activeTab === "Users" && role === "superadmin" && (
             <UserManager
               users={users}
@@ -290,6 +296,7 @@ function RoleDashboardHome({ role, users, activities, presence, onOpen }) {
                 {tab === "Gallery" ? <FileImage size={19} /> : null}
                 {tab === "Users" ? <UsersRound size={19} /> : null}
                 {tab === "Activities" ? <Activity size={19} /> : null}
+                {tab === "Enquiries" ? <MessageCircle size={19} /> : null}
                 {tab}
               </button>
             ))}
@@ -705,6 +712,93 @@ function UserManager({ users, refresh, notify }) {
             </div>
           </article>
         ))}
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   8. ENQUIRY MANAGER
+========================================================= */
+
+function EnquiryManager({ notify }) {
+  const [items, setItems] = useState(() => getEnquiries([]));
+
+  const updateStatus = (id, status) => {
+    const next = items.map((item) =>
+      item.id === id ? { ...item, status, updatedAt: new Date().toISOString() } : item
+    );
+    saveEnquiries(next);
+    setItems(next);
+    logActivity("Update Enquiry", id + " → " + status);
+    notify("Enquiry status updated.");
+  };
+
+  const remove = (id) => {
+    const next = items.filter((item) => item.id !== id);
+    saveEnquiries(next);
+    setItems(next);
+    logActivity("Delete Enquiry", id);
+    notify("Enquiry removed.");
+  };
+
+  return (
+    <section className="manager-section">
+      <div className="manager-header">
+        <div>
+          <h2>Enquiry Management</h2>
+          <p>Review incoming quote requests and update their status.</p>
+        </div>
+        <span>{items.length} enquiries</span>
+      </div>
+
+      <div className="activity-table-wrap">
+        <table className="activity-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Product</th>
+              <th>Company</th>
+              <th>Person</th>
+              <th>Quantity</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.product}</td>
+                <td>{item.company}</td>
+                <td>{item.person}</td>
+                <td>{item.quantity} {item.unit}</td>
+                <td>
+                  <select
+                    value={item.status || "Pending"}
+                    onChange={(event) => updateStatus(item.id, event.target.value)}
+                  >
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option>Replied</option>
+                    <option>Closed</option>
+                  </select>
+                </td>
+                <td>
+                  <button
+                    className="danger-button"
+                    type="button"
+                    onClick={() => remove(item.id)}
+                  >
+                    <Trash2 size={13} />
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {!items.length && <div className="manager-empty">No enquiries received yet.</div>}
       </div>
     </section>
   );
