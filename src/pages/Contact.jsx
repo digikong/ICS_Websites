@@ -4,8 +4,6 @@ import {
   CheckCircle2,
   Clock3,
   Headphones,
-  MessageCircle,
-  Phone,
   Send,
   ShieldCheck,
   Truck,
@@ -298,14 +296,7 @@ function Contact() {
             <ArrowRight size={17} />
           </button>
 
-          <a
-            href="https://wa.me/919876543210"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <MessageCircle size={18} />
-            Chat on WhatsApp
-          </a>
+          <ContactInfo compact mode="whatsapp" />
         </div>
       </section>
     </main>
