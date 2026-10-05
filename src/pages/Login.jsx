@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ContactInfo from "../components/ContactInfo";
 import {
   ArrowRight,
   CheckCircle2,
@@ -17,6 +18,14 @@ import {
 
 import LoginImg from "../assets/Login.png";
 import "./Login.css";
+
+import {
+  ensureSystemUsers,
+  getUsers,
+  setPresence,
+  setSessionUser,
+  logActivity,
+} from "../lib/cosmochemStore";
 
 const benefits = [
   [
@@ -64,57 +73,47 @@ function Login() {
       return;
     }
 
+    ensureSystemUsers();
+
     const normalizedEmail = form.email.trim().toLowerCase();
-
-    const isAdmin =
-      normalizedEmail === "admin@cosmochem.com" &&
-      form.password === "Admin@123";
-
-    const users = JSON.parse(
-      localStorage.getItem("cosmochem-users") || "[]"
+    const user = getUsers().find(
+      (item) =>
+        item.email === normalizedEmail &&
+        item.password === form.password &&
+        item.active !== false
     );
 
-    const customer = users.find(
-      (user) =>
-        user.email === normalizedEmail &&
-        user.password === form.password
-    );
-
-    if (!isAdmin && !customer) {
-      setMessage(
-        "Account not found or password is incorrect. Please sign up first."
-      );
+    if (!user) {
+      setMessage("Email or password is incorrect, or this account is inactive.");
       return;
     }
 
     const loggedInUser = {
-      name: isAdmin ? "Admin" : customer.name,
+      id: user.id || normalizedEmail,
+      name: user.name,
       email: normalizedEmail,
-      role: isAdmin ? "admin" : "customer",
+      role: user.role || "customer",
+      company: user.company || "",
     };
 
-    localStorage.setItem(
-      "cosmochem-auth-role",
-      loggedInUser.role
-    );
+    setSessionUser(loggedInUser);
+    setPresence("online");
+    logActivity("Login", "Successful login");
 
-    localStorage.setItem(
-      "cosmochem-current-user",
-      JSON.stringify(loggedInUser)
-    );
+    setMessage("Login successful. Opening your workspace...");
 
-    window.dispatchEvent(new Event("cosmochem-auth-change"));
+    window.setTimeout(() => {
+      const target =
+        loggedInUser.role === "superadmin"
+          ? "/superadmin"
+          : loggedInUser.role === "admin"
+          ? "/admin"
+          : loggedInUser.role === "accountant"
+          ? "/accountant"
+          : "/account";
 
-    setMessage(
-      isAdmin
-        ? "Admin login successful. Opening dashboard..."
-        : "Login successful. Opening your account..."
-    );
-
-    window.setTimeout(
-      () => navigate(isAdmin ? "/admin" : "/account"),
-      500
-    );
+      navigate(target);
+    }, 350);
   };
 
   return (
@@ -253,7 +252,6 @@ function Login() {
           </div>
         </div>
 
-        <div className="login-or">OR</div>
 
         <div className="register-side">
           <h2>New to CosmoChem?</h2>
@@ -323,23 +321,7 @@ function Login() {
           </span>
         </div>
 
-        <div>
-          <KeyRound size={27} />
-
-          <span>
-            {/* <strong>+91 6395468419</strong> */}
-            Mon - Fri (9:30 AM - 6:30 PM)
-          </span>
-        </div>
-
-        <div>
-          <MessageCircle size={27} />
-
-          <span>
-            <strong>Chat on WhatsApp</strong>
-            Get instant support
-          </span>
-        </div>
+        <ContactInfo compact showCompany />
       </section>
 
       {forgot && (
