@@ -1,0 +1,886 @@
+/* =========================================================
+   1. MAIN PAGE
+========================================================= */
+
+.PersonalCare-page {
+  width: 100%;
+  background: #f5f7f5;
+  color: #1a2d28;
+}
+
+
+/* =========================================================
+   2. HERO SECTION
+========================================================= */
+
+.PersonalCare-hero {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+  background: #0a3d2b;
+}
+
+.PersonalCare-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.PersonalCare-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(2, 41, 30, 0.92) 0%,
+    rgba(3, 52, 37, 0.8) 30%,
+    rgba(3, 52, 37, 0.18) 68%,
+    rgba(1, 34, 24, 0.08) 100%
+  );
+}
+
+.PersonalCare-hero-inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 28px 0;
+}
+
+
+/* ---------------------------------------------------------
+   2.1 Hero Breadcrumb
+--------------------------------------------------------- */
+
+.PersonalCare-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.02em;
+  margin-top: 20px;
+}
+
+.PersonalCare-breadcrumb span:last-child {
+  color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   2.2 Hero Row
+--------------------------------------------------------- */
+
+.PersonalCare-hero-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin-top: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   2.3 Hero Main Content
+--------------------------------------------------------- */
+
+.PersonalCare-hero-copy {
+  max-width: 620px;
+  padding-top: 20px;
+  color: #ffffff;
+}
+
+.PersonalCare-hero-copy h1 {
+  margin: 0 0 12px;
+
+  font-size: clamp(36.8px, 3vw, 64px);
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.PersonalCare-hero-copy h2 {
+  margin: 0 0 16px;
+
+  font-size: clamp(24px, 2vw, 38.4px);
+  line-height: 1.25;
+  font-weight: 600;
+
+  color: #f7fbf8;
+}
+
+.PersonalCare-hero-copy p {
+  margin: 0 0 24px;
+
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   2.4 Hero Side Text
+--------------------------------------------------------- */
+
+.PersonalCare-hero-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+
+  padding-top: 26px;
+
+  color: rgba(10, 85, 62, 0.9);
+  font-size: clamp(25.6px, 2vw, 38.4px);
+  line-height: 1.18;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+   /* margin-left: 100px; */
+}
+
+.PersonalCare-hero-aside::after {
+  content: "";
+
+  display: block;
+  width: 76px;
+  height: 3px;
+
+  margin-top: 10px;
+
+  background: #0d7a5c;
+}
+
+
+/* ---------------------------------------------------------
+   2.5 Hero Button
+--------------------------------------------------------- */
+/* 
+.PersonalCare-quote-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 0;
+  gap: 10px;
+
+  height: 42px;
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #0aac73;
+  color: #ffffff;
+
+  font-weight: 700;
+
+  box-shadow: 0 8px 18px rgba(10, 172, 115, 0.3);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.PersonalCare-quote-btn:hover {
+  transform: translateY(-1px);
+}
+ */
+
+/* ---------------------------------------------------------
+   2.6 Hero Features
+--------------------------------------------------------- */
+
+.PersonalCare-hero-features {
+  position: absolute;
+  left: 0;
+  /* top: 90px; */
+  margin-top: 5px;
+
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  
+}
+
+.PersonalCare-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 170px;
+  padding: 16px 18px;
+
+  color: #ffffff;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  
+}
+
+.PersonalCare-feature:last-child {
+  border-right: none;
+}
+
+.PersonalCare-feature svg {
+  color: #dffcf0;
+}
+
+.PersonalCare-feature div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.PersonalCare-feature strong {
+  font-size: 14.72px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   3. TRUST / INTRO SECTION
+========================================================= */
+
+.PersonalCare-trust {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 20px auto 0;
+  padding-top: 20px;
+}
+
+.PersonalCare-trust-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 30px;
+  align-items: center;
+
+  padding: 26px 0 10px;
+}
+
+
+/* ---------------------------------------------------------
+   3.1 Trust Content
+--------------------------------------------------------- */
+
+.PersonalCare-trust-copy {
+  padding: 8px 0;
+}
+
+.PersonalCare-kicker {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #0d7a5c;
+
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+}
+
+.PersonalCare-trust-copy h2 {
+  margin: 0 0 16px;
+
+  color: #10251e;
+
+  font-size: clamp(33.6px, 2.5vw, 51.2px);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.PersonalCare-trust-copy h2 span {
+  color: #0d7a5c;
+}
+
+.PersonalCare-trust-copy p {
+  max-width: 600px;
+
+  margin: 0 0 22px;
+
+  color: #56635f;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   3.2 Trust Button
+--------------------------------------------------------- */
+
+/* .PersonalCare-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  height: 42px;
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #0aac73;
+  color: #ffffff;
+
+  font-weight: 700;
+
+  box-shadow: 0 8px 18px rgba(10, 172, 115, 0.3);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.PersonalCare-primary-btn:hover {
+  transform: translateY(-1px);
+}
+ */
+
+/* ---------------------------------------------------------
+   3.3 Trust Image
+--------------------------------------------------------- */
+
+.PersonalCare-trust-visual {
+  position: relative;
+
+  min-height: 260px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #dfeee7;
+}
+
+.PersonalCare-trust-visual img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   3.4 Trust Image Badges
+--------------------------------------------------------- */
+
+.PersonalCare-trust-badges {
+  position: absolute;
+  inset: 0 0 0 auto;
+
+  width: 35%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 28px 22px;
+
+  background: rgba(13, 122, 92, 0.8);
+
+  color: #ffffff;
+}
+
+.PersonalCare-trust-badges span {
+  display: block;
+
+  font-size: 18.4px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.PersonalCare-trust-badges small {
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 12.8px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   4. FEATURE CARDS SECTION
+========================================================= */
+
+.PersonalCare-cards {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 24px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   4.1 Individual Card
+--------------------------------------------------------- */
+
+.PersonalCare-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  min-height: 120px;
+  padding: 20px 18px;
+
+  background: #edf6f1;
+
+  border: 1px solid #dfeae5;
+  border-radius: 8px;
+}
+
+.PersonalCare-card svg {
+  flex-shrink: 0;
+
+  margin-top: 6px;
+
+  color: #0d7a5c;
+}
+
+.PersonalCare-card h3 {
+  margin: 0 0 8px;
+
+  color: #172c26;
+
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.PersonalCare-card p {
+  margin: 0;
+
+  color: #596764;
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   5. PHARMACEUTICAL SOLUTION SECTION
+========================================================= */
+
+.PersonalCare-solution {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 30px auto 0;
+
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 34px;
+
+  align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   5.1 Solution Image
+--------------------------------------------------------- */
+
+.PersonalCare-solution-visual {
+  position: relative;
+
+  min-height: 360px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+}
+
+.PersonalCare-solution-visual img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   5.2 Solution Image Overlay
+--------------------------------------------------------- */
+
+.PersonalCare-solution-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 36%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 28px 22px;
+
+  background: rgba(212, 242, 225, 0.82);
+
+  color: #0b633e;
+}
+
+.PersonalCare-solution-overlay span {
+  font-size: clamp(17.6px, 1.7vw, 29.6px);
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.PersonalCare-solution-overlay i {
+  display: block;
+
+  width: 40px;
+  height: 3px;
+
+  margin-top: 16px;
+
+  background: #0b7d5d;
+}
+
+
+/* ---------------------------------------------------------
+   5.3 Solution Content
+--------------------------------------------------------- */
+
+.PersonalCare-solution-content {
+  padding: 6px 0;
+}
+
+.PersonalCare-solution-content h2 {
+  margin: 0 0 16px;
+
+  color: #10251e;
+
+  font-size: clamp(33.6px, 2.5vw, 51.2px);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.PersonalCare-solution-content h2 span {
+  color: #0d7a5c;
+}
+
+.PersonalCare-solution-content p {
+  max-width: 600px;
+
+  margin: 0 0 22px;
+
+  color: #56635f;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   5.4 Solution List
+--------------------------------------------------------- */
+
+.PersonalCare-solution-content ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.PersonalCare-solution-content li {
+  position: relative;
+
+  margin-bottom: 10px;
+  padding-left: 26px;
+
+  color: #243633;
+
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.PersonalCare-solution-content li::before {
+  content: "✓";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #0d7a5c;
+  color: #ffffff;
+
+  font-size: 11.2px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   6. SUSTAINABILITY SECTION
+========================================================= */
+
+.PersonalCare-sustainability {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 30px auto 0;
+
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 34px;
+
+  align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   6.1 Sustainability Image
+--------------------------------------------------------- */
+
+.PersonalCare-sustainability-visual {
+  position: relative;
+
+  min-height: 200px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+}
+
+.PersonalCare-sustainability-visual img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   6.2 Sustainability Overlay
+--------------------------------------------------------- */
+
+.PersonalCare-sustainability-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 38%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 28px 22px;
+
+  background: rgba(62, 124, 58, 0.7);
+
+  color: #ffffff;
+}
+
+.PersonalCare-sustainability-overlay span {
+  font-size: clamp(17.6px, 1.7vw, 29.6px);
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.PersonalCare-sustainability-overlay i {
+  display: block;
+
+  width: 40px;
+  height: 3px;
+
+  margin-top: 16px;
+
+  background: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   6.3 Sustainability Content
+--------------------------------------------------------- */
+
+.PersonalCare-sustainability-content {
+  padding: 6px 0;
+}
+
+.PersonalCare-sustainability-content h2 {
+  margin: 0 0 16px;
+
+  color: #10251e;
+
+  font-size: clamp(33.6px, 2.5vw, 51.2px);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.PersonalCare-sustainability-content h2 span {
+  color: #0d7a5c;
+}
+
+.PersonalCare-sustainability-content p {
+  max-width: 600px;
+
+  margin: 0 0 22px;
+
+  color: #56635f;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   7. FINAL CTA
+========================================================= */
+
+.pharmaceuticals-cta {
+  width: calc(100% - 80px);
+  max-width: 1200px;
+
+  margin: 34px auto 24px;
+
+  padding: 18px 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #02553f 0%,
+    #0d7a5c 100%
+  );
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   7.1 CTA TEXT
+========================================================= */
+
+.pharmaceuticals-cta-text {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  flex: 1;
+}
+
+.pharmaceuticals-cta-mark {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  font-size: 18px;
+}
+
+.pharmaceuticals-cta-text p {
+  margin: 0;
+
+  font-size: 30px;
+  line-height: 1.2;
+
+  font-weight: 600;
+}
+
+.pharmaceuticals-cta-text small {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 18px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   7.2 CTA BUTTONS
+========================================================= */
+
+.pharmaceuticals-cta-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.pharmaceuticals-cta-primary,
+.pharmaceuticals-cta-secondary {
+  height: 42px;
+
+  padding: 0 22px;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.pharmaceuticals-cta-primary {
+  background: #ffffff;
+
+  color: #0a634a;
+
+  border: none;
+}
+
+.pharmaceuticals-cta-secondary {
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  color: #ffffff;
+}
+
+

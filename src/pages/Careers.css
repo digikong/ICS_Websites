@@ -1,0 +1,1194 @@
+/* =========================================================
+   1. MAIN PAGE
+========================================================= */
+
+.careers-page {
+  width: 100%;
+  background: #ffffff;
+  color: #102b27;
+}
+
+
+/* =========================================================
+   2. HERO SECTION
+========================================================= */
+
+.careers-hero {
+  position: relative;
+  min-height: 600px;
+  overflow: hidden;
+  background: #073f37;
+}
+
+.careers-hero-bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+.careers-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(1, 44, 39, 0.96) 0%,
+    rgba(2, 57, 49, 0.88) 30%,
+    rgba(2, 57, 49, 0.35) 58%,
+    rgba(2, 40, 34, 0.08) 100%
+  );
+}
+
+
+.careers-hero-inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(1200px, calc(100% - 80px));
+  min-height: 410px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* ---------------------------------------------------------
+   2.1 Hero Content
+--------------------------------------------------------- */
+
+.careers-hero-copy {
+  max-width: 610px;
+  padding: 35px 0;
+  color: #ffffff;
+}
+
+.careers-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+}
+
+.careers-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.careers-breadcrumb a:hover {
+  color: #7ef0c5;
+}
+
+.careers-breadcrumb [aria-current="page"] {
+  color: #7ef0c5;
+}
+
+.careers-hero-copy h1 {
+  margin: 0 0 10px;
+
+  font-size: 68px;
+  line-height: 0.98;
+  font-weight: 700;
+}
+
+.careers-hero-copy h1 span {
+  color: #7ef0c5;
+}
+
+.careers-hero-copy h2 {
+  margin: 0 0 18px;
+
+  color: #f2fffb;
+
+  font-size: 25px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.careers-hero-copy p {
+  max-width: 570px;
+
+  margin: 0 0 22px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   2.2 Hero Button
+--------------------------------------------------------- */
+/* 
+.careers-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  height: 42px;
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #9cf4d0;
+  color: #073f37;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.careers-hero-btn:hover {
+  transform: translateY(-1px);
+} */
+
+
+/* ---------------------------------------------------------
+   2.3 Hero Side Text
+--------------------------------------------------------- */
+
+.careers-hero-aside {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 20px;
+
+  color: #ffffff;
+
+  font-size: 38px;
+  line-height: 1.15;
+
+  font-weight: 400;
+  font-style: italic;
+}
+
+.careers-hero-aside i {
+  display: block;
+
+  width: 70px;
+  height: 3px;
+
+  margin-top: 12px;
+
+  background: #7ef0c5;
+
+  transform: rotate(-5deg);
+}
+
+
+/* =========================================================
+   3. CAREER VALUES SECTION
+========================================================= */
+
+.careers-values {
+  width: 100%;
+
+  background: #f0faf6;
+
+  border-bottom: 1px solid #e3eee9;
+}
+
+.careers-values-inner {
+  width: min(1200px, calc(100% - 80px));
+
+  min-height: 92px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 18px;
+
+  align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   3.1 Individual Value
+--------------------------------------------------------- */
+
+.careers-value {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.careers-value-icon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #bdf5df;
+
+  color: #063e35;
+}
+
+.careers-value-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.careers-value-content strong {
+  color: #132f2a;
+
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.careers-value-content span {
+  max-width: 150px;
+
+  color: #53645f;
+
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   4. OUR CULTURE SECTION
+========================================================= */
+
+.careers-culture {
+  width: 100%;
+
+  padding: 32px 0 24px;
+
+  background: #ffffff;
+}
+
+.careers-culture-inner {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.95fr 1.25fr;
+
+  gap: 40px;
+
+  align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   4.1 Culture Content
+--------------------------------------------------------- */
+
+.careers-culture-content {
+  padding: 10px 0;
+}
+
+.careers-kicker {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #087557;
+
+  font-size: 12px;
+
+  letter-spacing: 0.14em;
+
+  font-weight: 800;
+}
+
+.careers-culture-content h2,
+.careers-opportunities-header h2 {
+  margin: 0 0 14px;
+
+  color: #102a26;
+
+  font-size: 45px;
+
+  line-height: 1.12;
+
+  font-weight: 700;
+}
+
+.careers-culture-content h2 span,
+.careers-opportunities-header h2 span {
+  color: #087557;
+}
+
+.careers-culture-content p {
+  max-width: 510px;
+
+  margin: 0 0 20px;
+
+  color: #53635f;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   4.2 Primary Button
+--------------------------------------------------------- */
+
+/* .careers-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  height: 42px;
+
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #07835e;
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 16px rgba(7, 131, 94, 0.2);
+
+  transition: transform 0.2s ease;
+}
+
+.careers-primary-btn:hover {
+  transform: translateY(-1px);
+} */
+
+
+/* ---------------------------------------------------------
+   4.3 Culture Visual
+--------------------------------------------------------- */
+
+.careers-culture-visual {
+  position: relative;
+
+  min-height: 220px;
+}
+
+.careers-culture-circle {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+}
+
+
+/* Main Team Image */
+
+.careers-culture-main {
+  left: 0;
+  top: 0;
+
+  width: 185px;
+  height: 185px;
+
+  border: 4px solid #ffffff;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.careers-culture-main img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* Green Circle */
+
+.careers-culture-leaf {
+  left: 150px;
+  top: 18px;
+
+  width: 130px;
+  height: 130px;
+
+  background: #1d654e;
+
+  color: #ffffff;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  z-index: 2;
+}
+
+.careers-culture-leaf img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.62;
+}
+
+.careers-culture-leaf::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(13, 73, 53, 0.42);
+  content: "";
+}
+
+.careers-culture-leaf svg {
+  color: #c5f4dc;
+}
+
+.careers-culture-leaf span {
+  position: relative;
+  z-index: 2;
+  font-size: 13px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+/* Possibilities Circle */
+
+.careers-culture-light {
+  left: 270px;
+  top: 28px;
+
+  width: 145px;
+  height: 145px;
+
+  background: #e9f8f3;
+
+  color: #153b34;
+
+  z-index: 1;
+}
+
+.careers-culture-light span {
+  font-size: 14px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+/* Seedling */
+
+.careers-culture-seedling {
+  right: 55px;
+  top: 15px;
+
+  width: 135px;
+  height: 135px;
+
+  z-index: 2;
+
+  border: 4px solid #ffffff;
+}
+
+.careers-culture-seedling img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* Future Circle */
+
+.careers-culture-future {
+  right: 0;
+  top: 65px;
+
+  width: 105px;
+  height: 105px;
+
+  background: #dff5ec;
+
+  color: #183e36;
+
+  z-index: 3;
+}
+
+.careers-culture-future span {
+  font-size: 12px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   5. CURRENT OPPORTUNITIES SECTION
+========================================================= */
+
+.careers-opportunities {
+  width: 100%;
+
+  padding: 22px 0 28px;
+
+  background: #ffffff;
+
+  border-top: 1px solid #edf2ef;
+}
+
+.careers-opportunities-inner {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   5.1 Opportunities Header
+--------------------------------------------------------- */
+
+.careers-opportunities-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 16px;
+}
+
+.careers-opportunities-header h2 {
+  margin-bottom: 0;
+}
+
+.careers-opportunities-note {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  color: #23473e;
+
+  font-size: 18px;
+
+  line-height: 1.1;
+
+  font-style: italic;
+}
+
+.careers-opportunities-note i {
+  width: 55px;
+  height: 3px;
+
+  margin-top: 8px;
+
+  background: #0c9b70;
+
+  transform: rotate(-5deg);
+}
+
+
+/* ---------------------------------------------------------
+   5.2 Opportunities Grid
+--------------------------------------------------------- */
+
+.careers-opportunities-grid {
+  display: grid;
+
+  grid-template-columns: 3.2fr 1.2fr;
+
+  gap: 16px;
+
+  align-items: stretch;
+}
+
+
+/* ---------------------------------------------------------
+   5.3 Job Table
+--------------------------------------------------------- */
+
+.careers-job-table {
+  overflow: hidden;
+
+  border: 1px solid #dce9e4;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+.careers-job-row {
+  min-height: 38px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.35fr
+    1.15fr
+    0.85fr
+    0.8fr
+    34px;
+
+  align-items: center;
+
+  column-gap: 12px;
+
+  padding: 0 18px;
+
+  border-bottom: 1px solid #edf2ef;
+}
+
+.careers-job-row:last-child {
+  border-bottom: none;
+}
+
+.careers-job-header {
+  min-height: 44px;
+
+  background: #f7fbf9;
+
+  color: #203a34;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.careers-job-row > span,
+.careers-job-row > strong {
+  font-size: 15px;
+
+  line-height: 1.3;
+}
+
+.careers-job-row > span {
+  color: #566762;
+}
+
+.careers-job-row > strong {
+  color: #162f2a;
+}
+
+
+/* ---------------------------------------------------------
+   5.4 Job Arrow
+--------------------------------------------------------- */
+.careers-job-arrow {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #0b966c;
+  border-radius: 50%;
+
+  background: #f4fff9;
+  color: #087557;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.careers-job-arrow:hover {
+  background: #087557;
+  color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   5.5 CV Card
+--------------------------------------------------------- */
+
+.careers-cv-card {
+  min-height: 330px;
+
+  padding: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  border-radius: 8px;
+
+  background: #edf9f4;
+
+  color: #163a32;
+}
+
+.careers-cv-icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 8px;
+
+  color: #087557;
+}
+
+.careers-cv-card h3 {
+  margin: 0 0 12px;
+
+  color: #153b34;
+
+  font-size: 22px;
+
+  line-height: 1.15;
+}
+
+.careers-cv-card p {
+  margin: 0 0 14px;
+
+  color: #566762;
+
+  font-size: 15px;
+
+  line-height: 1.55;
+}
+
+.careers-email {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  min-height: 38px;
+
+  padding: 0 10px;
+
+  border: 1px solid #cfe2da;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #087557;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.careers-cv-send {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  margin-top: 22px;
+
+  color: #087557;
+}
+
+.careers-cv-send svg {
+  flex-shrink: 0;
+}
+
+.careers-cv-send span {
+  color: #24483f;
+
+  font-size: 15px;
+
+  line-height: 1.35;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   6. IMPACT / JOIN OUR TEAM SECTION
+========================================================= */
+
+.careers-impact {
+  position: relative;
+
+  min-height: 190px;
+
+  overflow: hidden;
+
+  background: #073f37;
+}
+
+.careers-impact-bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.careers-impact-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(3, 57, 45, 0.48) 0%,
+    rgba(3, 57, 45, 0.76) 48%,
+    rgba(2, 48, 40, 0.68) 100%
+  );
+}
+
+.careers-impact-inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(1200px, calc(100% - 80px));
+
+  min-height: 190px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   6.1 Impact Content
+--------------------------------------------------------- */
+
+.careers-impact-content {
+  max-width: 560px;
+}
+
+.careers-impact-content h2 {
+  margin: 0 0 8px;
+
+  font-size: 34px;
+
+  line-height: 1.2;
+}
+
+.careers-impact-content p {
+  margin: 0 0 16px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+.careers-impact-btn {
+  background: #9cf4d0;
+
+  color: #063e35;
+
+  box-shadow: none;
+}
+
+
+/* ---------------------------------------------------------
+   6.2 Impact Values
+--------------------------------------------------------- */
+
+.careers-impact-values {
+  display: flex;
+
+  align-items: center;
+
+  gap: 42px;
+}
+
+.careers-impact-values > div {
+  min-width: 90px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 3px;
+
+  text-align: center;
+}
+
+.careers-impact-values svg {
+  margin-bottom: 4px;
+
+  color: #d5f9e7;
+}
+
+.careers-impact-values strong {
+  font-size: 15px;
+}
+
+.careers-impact-values span {
+  font-size: 14px;
+
+  color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* =========================================================
+   7. RESPONSIVE DESIGN
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   7.1 Tablet
+--------------------------------------------------------- */
+
+@media (max-width: 980px) {
+
+  .careers-values-inner {
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 18px 0;
+  }
+
+  .careers-culture-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .careers-culture-visual {
+    min-height: 260px;
+  }
+
+  .careers-opportunities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .careers-cv-card {
+    min-height: 260px;
+  }
+
+  .careers-impact-inner {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    padding: 30px 0;
+  }
+
+  .careers-impact-values {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   7.2 Mobile
+--------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .careers-hero-inner,
+  .careers-values-inner,
+  .careers-culture-inner,
+  .careers-opportunities-inner,
+  .careers-impact-inner {
+    width: min(100%, calc(100% - 32px));
+  }
+
+
+  /* Hero */
+
+  .careers-hero {
+    min-height: 560px;
+  }
+
+  .careers-hero-inner {
+    min-height: 560px;
+
+    align-items: flex-start;
+  }
+
+  .careers-hero-copy {
+    padding-top: 35px;
+  }
+
+  .careers-hero-copy h1 {
+    font-size: 48px;
+  }
+
+  .careers-hero-copy h2 {
+    font-size: 19px;
+  }
+
+  .careers-hero-copy p {
+    font-size: 14px;
+  }
+
+  .careers-hero-aside {
+    display: none;
+  }
+
+
+  /* Values */
+
+  .careers-values-inner {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding: 16px 0;
+  }
+
+  .careers-value {
+    padding: 8px 0;
+  }
+
+
+  /* Culture */
+
+  .careers-culture {
+    padding: 28px 0;
+  }
+
+  .careers-culture-content h2,
+  .careers-opportunities-header h2 {
+    font-size: 32px;
+  }
+
+  .careers-culture-visual {
+    min-height: 320px;
+
+    transform: scale(0.88);
+
+    transform-origin: center;
+  }
+
+
+  /* Opportunities */
+
+  .careers-opportunities-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .careers-opportunities-note {
+    align-items: flex-start;
+  }
+
+  .careers-opportunities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .careers-job-table {
+    overflow-x: auto;
+  }
+
+  .careers-job-row {
+    min-width: 680px;
+  }
+
+  .careers-cv-card {
+    min-height: 300px;
+  }
+
+
+  /* Impact */
+
+  .careers-impact {
+    min-height: 420px;
+  }
+
+  .careers-impact-inner {
+    min-height: 420px;
+
+    padding: 35px 0;
+  }
+
+  .careers-impact-values {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+  }
+
+  .careers-impact-values > div {
+    min-width: 0;
+  }
+}

@@ -1,0 +1,657 @@
+/* ================================
+   Main Layout
+================================ */
+
+.contact-page {
+  color: #17231e;
+}
+
+.contact-container {
+  width: calc(100% - 60px);
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* ================================
+   Hero Section
+================================ */
+
+.contact-hero {
+  position: relative;
+  height: 440px;
+  overflow: hidden;
+  color: white;
+}
+
+.contact-hero > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 43%;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 42, 30, 0.98),
+    rgba(0, 55, 39, 0.78) 35%,
+    rgba(0, 55, 39, 0.07) 76%
+  );
+}
+
+.contact-hero-content {
+  position: absolute;
+  inset: 0;
+  padding-top: 25px;
+}
+
+.contact-breadcrumb {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.contact-breadcrumb span {
+  padding: 0 8px;
+  color: #b8dacc;
+}
+
+.contact-hero h1 {
+  margin: 0;
+  font-size: 33px;
+   margin-top: 20px;
+}
+
+.contact-hero h1 span,
+.contact-section-title h2 span,
+.contact-cta h2 span {
+  color: #5bd444;
+}
+
+.contact-hero h1::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin-top: 11px;
+  background: #5bd444;
+}
+
+.contact-hero p {
+  margin-top: 13px;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ================================
+   Main Contact Grid
+================================ */
+
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.83fr 0.47fr;
+  gap: 11px;
+  margin-top: 14px;
+}
+
+.contact-form-card,
+.contact-info-card {
+  padding: 15px;
+  border: 1px solid #e3eae6;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 3px 12px rgba(0, 45, 30, 0.05);
+}
+
+/* ================================
+   Section Titles
+================================ */
+
+.contact-section-title h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.contact-section-title p {
+  margin: 7px 0 13px;
+  color: #48554e;
+  font-size: 15px;
+}
+
+/* ================================
+   Contact Form
+================================ */
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.contact-form-card input,
+.contact-form-card select,
+.contact-form-card textarea {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 0 9px;
+  border: 1px solid #dce6e0;
+  border-radius: 5px;
+  color: #28352f;
+  outline: 0;
+  font-size: 15px;
+}
+
+.contact-form-card input,
+.contact-form-card select {
+  height: 31px;
+}
+
+.contact-form-card textarea {
+  min-height: 66px;
+  padding-top: 9px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.privacy-check {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 0 9px;
+  color: #4f5c55;
+  font-size: 15px;
+}
+
+.privacy-check input {
+  width: 11px;
+  height: 11px;
+  margin: 0;
+}
+
+.privacy-check strong {
+  color: #087b57;
+}
+
+.send-message {
+  width: 165px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 0;
+  border-radius: 4px;
+  background: #075c3e;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ================================
+   Contact Information
+================================ */
+
+.contact-info-card .contact-section-title {
+  padding-bottom: 7px;
+  border-bottom: 1px solid #dbe7e0;
+}
+
+.contact-info-card .contact-section-title h2 {
+  font-size: 15px;
+}
+
+.contact-info-card .contact-section-title h2::after {
+  content: "";
+  display: block;
+  width: 21px;
+  height: 2px;
+  margin-top: 6px;
+  background: #087b57;
+}
+
+.contact-details {
+  padding-top: 4px;
+}
+
+.contact-detail {
+  display: flex;
+  gap: 12px;
+  padding: 13px 3px;
+  border-bottom: 1px solid #e6ede9;
+}
+
+.contact-detail svg {
+  flex-shrink: 0;
+  color: #087b57;
+}
+
+.contact-detail span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contact-detail strong {
+  font-size: 15px;
+}
+
+.contact-detail small {
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+
+.contact-success-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: #eefaf3;
+  border: 1px solid #b9e5c9;
+  color: #176b3a;
+}
+
+.contact-success-message svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-success-message strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.contact-success-message p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #397052;
+}
+/* ================================
+   Social Media
+================================ */
+
+.contact-follow {
+  padding: 13px 3px 2px;
+  font-size: 20px;
+}
+
+.contact-follow div {
+  display: flex;
+  gap: 8px;
+  margin-top: 9px;
+}
+
+.contact-follow a {
+  width:  30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #075c3e;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ================================
+   Quick Contact Cards
+================================ */
+
+.contact-quick-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quick-call,
+.quick-whatsapp {
+  min-height: 142px;
+  padding: 18px 15px;
+  border-radius: 7px;
+}
+
+.quick-call {
+  background: #005b3d;
+  color: white;
+}
+
+.quick-call h2,
+.quick-whatsapp h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.quick-call p,
+.quick-whatsapp p {
+  margin: 15px 0 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.quick-call a,
+.quick-whatsapp a {
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 12px;
+  border-radius: 4px;
+  background: white;
+  color: #075c3e;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.quick-whatsapp {
+  background: #eff7f3;
+  color: #17231e;
+}
+
+.quick-whatsapp > svg {
+  color: #087b57;
+}
+
+.quick-whatsapp h2 span {
+  color: #075c3e;
+}
+
+.quick-whatsapp a {
+  border: 1px solid #087b57;
+  background: transparent;
+}
+
+
+
+/* ================================
+   Map Section
+================================ */
+
+.contact-map {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  margin-top: 40px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.contact-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-label {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  left: 12px;
+  width: 155px;
+  padding: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
+}
+
+.map-label strong {
+  font-size: 20px;
+}
+
+.map-label span,
+.map-label small,
+.map-label a {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.map-label small {
+  color: #5e6b63;
+}
+
+.map-label a {
+  color: #087b57;
+  font-weight: 700;
+}
+
+.map-road {
+  position: absolute;
+  width: 130%;
+  height: 22px;
+  transform: rotate(-15deg);
+  background: rgba(255, 255, 255, 0.58);
+  border-top: 1px solid #d5e1df;
+  border-bottom: 1px solid #d5e1df;
+}
+
+.map-road-one {
+  top: 66px;
+  left: 18%;
+}
+
+.map-road-two {
+  top: 19px;
+  left: 33%;
+  transform: rotate(18deg);
+}
+
+.map-pin {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #df4a36;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.map-pin svg {
+  fill: #df4a36;
+  color: #b73529;
+}
+
+.map-controls {
+  position: absolute;
+  right: 10px;
+  top: 47px;
+  width: 25px;
+  padding: 4px 0;
+  text-align: center;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  line-height: 18px;
+}
+
+.map-controls hr {
+  margin: 2px 5px;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+/* ================================
+   Benefits Section
+================================ */
+
+.contact-benefits {
+  padding: 11px 0;
+  margin-top: 13px;
+  background: #f1f8f4;
+}
+
+.contact-benefits .contact-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.contact-benefits .contact-container > div {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 18px;
+  border-right: 1px solid #dce7e1;
+}
+
+.contact-benefits .contact-container > div:last-child {
+  border: 0;
+}
+
+.contact-benefits svg {
+  flex-shrink: 0;
+  color: #087b57;
+}
+
+.contact-benefits span {
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.contact-benefits strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #075c3e;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   Call-to-action section
+========================================================= */
+
+.certification-cta {
+  padding: 10px 0 14px;
+}
+
+.certification-cta > div {
+  min-height: 110px;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-radius: 7px;
+  background: #005b3d;
+  color: white;
+}
+
+.certification-cta > div > svg {
+  flex-shrink: 0;
+}
+
+.certification-cta h2 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.15;
+}
+
+.certification-cta p {
+  max-width: 250px;
+  margin-top: 7px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.certification-cta button,
+.certification-cta a {
+  min-width: 125px;
+  height: 34px;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 5px;
+  background: white;
+  color: #075c3e;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.certification-cta a {
+  min-width: 170px;
+  margin-left: 0;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+}
+
+/* ================================
+   Responsive Design
+================================ */
+
+@media (max-width: 900px) {
+  .contact-main-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-quick-stack {
+    grid-column: 1 / 3;
+    flex-direction: row;
+  }
+
+  .quick-call,
+  .quick-whatsapp {
+    flex: 1;
+  }
+
+  .contact-benefits .contact-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    width: calc(100% - 30px);
+  }
+
+  .contact-hero {
+    height: 300px;
+  }
+
+  .contact-hero p br {
+    display: none;
+  }
+
+  .contact-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-quick-stack {
+    grid-column: auto;
+    flex-direction: column;
+  }
+
+  .contact-benefits .contact-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-benefits .contact-container > div {
+    padding: 7px 10px;
+    border-bottom: 1px solid #dce7e1;
+  }
+
+  .contact-cta > div {
+    flex-wrap: wrap;
+    padding: 17px;
+  }
+
+  .contact-cta a {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,1498 @@
+/* =========================================================
+   1. MAIN PAGE
+========================================================= */
+
+.Food-page {
+  width: 100%;
+  background: #f5f7f5;
+  color: #1a2d28;
+}
+
+
+/* =========================================================
+   2. HERO SECTION
+========================================================= */
+
+.Food-hero {
+  position: relative;
+
+  min-height: 520px;
+
+  overflow: hidden;
+
+  background: #0a3d2b;
+}
+
+
+.Food-hero-bg {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+.Food-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(2, 41, 30, 0.92) 0%,
+    rgba(3, 52, 37, 0.80) 30%,
+    rgba(3, 52, 37, 0.18) 68%,
+    rgba(1, 34, 24, 0.08) 100%
+  );
+}
+
+
+.Food-hero-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  padding: 28px 0;
+}
+
+
+/* ---------------------------------------------------------
+   2.1 HERO BREADCRUMB
+--------------------------------------------------------- */
+
+.Food-breadcrumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 20px;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 15px;
+
+  letter-spacing: 0.02em;
+}
+
+
+.Food-breadcrumb span:last-child {
+  color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   2.2 HERO ROW
+--------------------------------------------------------- */
+
+.Food-hero-row {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-top: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   2.3 HERO CONTENT
+--------------------------------------------------------- */
+
+.Food-hero-copy {
+  max-width: 650px;
+
+  padding-top: 20px;
+
+  color: #ffffff;
+}
+
+
+.Food-hero-copy h1 {
+  margin: 0 0 12px;
+
+  font-size: 60px;
+
+  line-height: 1.08;
+
+  font-weight: 700;
+}
+
+
+.Food-hero-copy h1 span {
+  color: #7ce39c;
+}
+
+
+.Food-hero-copy h2 {
+  margin: 0 0 16px;
+
+  color: #f7fbf8;
+
+  font-size: 32px;
+
+  line-height: 1.25;
+
+  font-weight: 600;
+}
+
+
+.Food-hero-copy p {
+  max-width: 650px;
+
+  margin: 0 0 24px;
+
+  color: rgba(255, 255, 255, 0.90);
+
+  font-size: 17px;
+
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   2.4 HERO BUTTON
+--------------------------------------------------------- */
+/* 
+.Food-quote-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  height: 42px;
+
+  padding: 0 22px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #0aac73;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 18px rgba(10, 172, 115, 0.30);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.Food-quote-btn:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 10px 22px rgba(10, 172, 115, 0.35);
+} */
+
+
+/* ---------------------------------------------------------
+   2.5 HERO SIDE TEXT
+--------------------------------------------------------- */
+
+.Food-hero-aside {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 2px;
+
+  padding-top: 26px;
+
+  color: rgba(10, 85, 62, 0.95);
+
+  font-size: 34px;
+
+  line-height: 1.18;
+
+  font-weight: 800;
+
+  letter-spacing: 0.02em;
+}
+
+
+.Food-hero-aside::after {
+  content: "";
+
+  display: block;
+
+  width: 76px;
+
+  height: 3px;
+
+  margin-top: 10px;
+
+  background: #0d7a5c;
+}
+
+
+/* ---------------------------------------------------------
+   2.6 HERO FEATURES
+--------------------------------------------------------- */
+
+.Food-hero-features {
+  position: absolute;
+
+  left: 0;
+
+  margin-top: 5px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+
+.Food-feature {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 170px;
+
+  padding: 16px 18px;
+
+  color: #ffffff;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+.Food-feature:last-child {
+  border-right: none;
+}
+
+
+.Food-feature svg {
+  flex-shrink: 0;
+
+  color: #dffcf0;
+}
+
+
+.Food-feature div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.Food-feature strong {
+  font-size: 14px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   3. TRUST / INTRO SECTION
+========================================================= */
+
+.Food-trust {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 20px auto 0;
+
+  padding-top: 20px;
+}
+
+
+.Food-trust-inner {
+  display: grid;
+
+  grid-template-columns: 1.05fr 1fr;
+
+  gap: 30px;
+
+  align-items: center;
+
+  padding: 26px 0 10px;
+}
+
+
+/* ---------------------------------------------------------
+   3.1 TRUST CONTENT
+--------------------------------------------------------- */
+
+.Food-trust-copy {
+  padding: 8px 0;
+}
+
+
+.Food-kicker {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #0d7a5c;
+
+  font-size: 14px;
+
+  letter-spacing: 0.12em;
+
+  font-weight: 800;
+}
+
+
+.Food-trust-copy h2 {
+  margin: 0 0 16px;
+
+  color: #10251e;
+
+  font-size: 48px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+
+.Food-trust-copy h2 span {
+  color: #0d7a5c;
+}
+
+
+.Food-trust-copy p {
+  max-width: 600px;
+
+  margin: 0 0 22px;
+
+  color: #56635f;
+
+  font-size: 17px;
+
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   3.2 PRIMARY BUTTON
+--------------------------------------------------------- */
+/* 
+.Food-primary-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  height: 42px;
+
+  padding: 0 22px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #0aac73;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 18px rgba(10, 172, 115, 0.30);
+
+  transition: transform 0.2s ease;
+}
+
+
+.Food-primary-btn:hover {
+  transform: translateY(-1px);
+}
+ */
+
+/* ---------------------------------------------------------
+   3.3 TRUST IMAGE
+--------------------------------------------------------- */
+
+.Food-trust-visual {
+  position: relative;
+
+  min-height: 260px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #dfeee7;
+}
+
+
+.Food-trust-visual img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   3.4 TRUST BADGES
+--------------------------------------------------------- */
+
+.Food-trust-badges {
+  position: absolute;
+
+  inset: 0 0 0 auto;
+
+  width: 35%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 28px 22px;
+
+  background: rgba(13, 122, 92, 0.78);
+
+  color: #ffffff;
+}
+
+
+.Food-trust-badges span {
+  display: block;
+
+  font-size: 18px;
+
+  line-height: 1.4;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   4. FEATURE CARDS
+========================================================= */
+
+.Food-cards {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 24px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.Food-card {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  min-height: 120px;
+
+  padding: 20px 18px;
+
+  background: #edf6f1;
+
+  border: 1px solid #dfeae5;
+
+  border-radius: 8px;
+}
+
+
+.Food-card svg {
+  flex-shrink: 0;
+
+  margin-top: 6px;
+
+  color: #0d7a5c;
+}
+
+
+.Food-card h3 {
+  margin: 0 0 8px;
+
+  color: #172c26;
+
+  font-size: 18px;
+
+  line-height: 1.3;
+}
+
+
+.Food-card p {
+  margin: 0;
+
+  color: #596764;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   5. FOOD APPLICATION / SOLUTION SECTION
+========================================================= */
+
+.Food-solution {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 30px auto 0;
+
+  display: grid;
+
+  grid-template-columns: 1.08fr 1fr;
+
+  gap: 34px;
+
+  align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   5.1 SOLUTION IMAGE
+--------------------------------------------------------- */
+
+.Food-solution-visual {
+  position: relative;
+
+  min-height: 360px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+}
+
+
+.Food-solution-visual img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   5.2 SOLUTION IMAGE OVERLAY
+--------------------------------------------------------- */
+
+.Food-solution-overlay {
+  position: absolute;
+
+  top: 0;
+
+  right: 0;
+
+  width: 36%;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 28px 22px;
+
+  background: rgba(212, 242, 225, 0.82);
+
+  color: #0b633e;
+}
+
+
+.Food-solution-overlay span {
+  font-size: 27px;
+
+  line-height: 1.25;
+
+  font-weight: 600;
+}
+
+
+.Food-solution-overlay i {
+  display: block;
+
+  width: 40px;
+
+  height: 3px;
+
+  margin-top: 16px;
+
+  background: #0b7d5d;
+}
+
+
+/* ---------------------------------------------------------
+   5.3 SOLUTION CONTENT
+--------------------------------------------------------- */
+
+.Food-solution-content {
+  padding: 6px 0;
+}
+
+
+.Food-solution-content h2 {
+  margin: 0 0 16px;
+
+  color: #10251e;
+
+  font-size: 48px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+
+.Food-solution-content h2 span {
+  color: #0d7a5c;
+}
+
+
+.Food-solution-content p {
+  max-width: 600px;
+
+  margin: 0 0 22px;
+
+  color: #56635f;
+
+  font-size: 17px;
+
+  line-height: 1.65;
+}
+
+
+.Food-solution-content ul {
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+
+.Food-solution-content li {
+  position: relative;
+
+  margin-bottom: 10px;
+
+  padding-left: 26px;
+
+  color: #243633;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+
+.Food-solution-content li::before {
+  content: "✓";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 18px;
+
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #0d7a5c;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   6. GLOBAL STATS
+========================================================= */
+
+.Food-stats {
+  width: 100%;
+
+  margin-top: 30px;
+
+  background: #eef8f4;
+
+  border-top: 1px solid #e1eee8;
+
+  border-bottom: 1px solid #e1eee8;
+}
+
+
+.Food-stats-inner {
+  width: min(1200px, calc(100% - 80px));
+
+  min-height: 92px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  align-items: center;
+}
+
+
+.Food-stat {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  min-height: 55px;
+
+  border-right: 1px solid #d9e8e1;
+}
+
+
+.Food-stat:last-child {
+  border-right: none;
+}
+
+
+.Food-stat svg {
+  color: #0d7a5c;
+}
+
+
+.Food-stat div {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.Food-stat strong {
+  color: #10251e;
+
+  font-size: 28px;
+
+  line-height: 1.1;
+
+  font-weight: 700;
+}
+
+
+.Food-stat span {
+  color: #52645d;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   7. SUSTAINABILITY SECTION
+========================================================= */
+
+.Food-sustainability {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 30px auto 0;
+
+  display: grid;
+
+  grid-template-columns: 1.08fr 1fr;
+
+  gap: 34px;
+
+  align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   7.1 SUSTAINABILITY IMAGE
+--------------------------------------------------------- */
+
+.Food-sustainability-visual {
+  position: relative;
+
+  min-height: 200px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+}
+
+
+.Food-sustainability-visual img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   7.2 SUSTAINABILITY OVERLAY
+--------------------------------------------------------- */
+
+.Food-sustainability-overlay {
+  position: absolute;
+
+  top: 0;
+
+  right: 0;
+
+  width: 38%;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 28px 22px;
+
+  background: rgba(62, 124, 58, 0.70);
+
+  color: #ffffff;
+}
+
+
+.Food-sustainability-overlay span {
+  font-size: 27px;
+
+  line-height: 1.25;
+
+  font-weight: 600;
+}
+
+
+.Food-sustainability-overlay i {
+  display: block;
+
+  width: 40px;
+
+  height: 3px;
+
+  margin-top: 16px;
+
+  background: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   7.3 SUSTAINABILITY CONTENT
+--------------------------------------------------------- */
+
+.Food-sustainability-content {
+  padding: 6px 0;
+}
+
+
+.Food-sustainability-content h2 {
+  margin: 0 0 16px;
+
+  color: #10251e;
+
+  font-size: 48px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+
+.Food-sustainability-content h2 span {
+  color: #0d7a5c;
+}
+
+
+.Food-sustainability-content p {
+  max-width: 600px;
+
+  margin: 0 0 22px;
+
+  color: #56635f;
+
+  font-size: 17px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   8. FINAL CTA
+========================================================= */
+
+.Food-cta {
+  width: calc(100% - 80px);
+
+  max-width: 1200px;
+
+  margin: 34px auto 24px;
+
+  padding: 18px 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #02553f 0%,
+    #0d7a5c 100%
+  );
+
+  color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   8.1 CTA TEXT
+--------------------------------------------------------- */
+
+.Food-cta-text {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  flex: 1;
+}
+
+
+.Food-cta-mark {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 32px;
+
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  font-size: 18px;
+}
+
+
+.Food-cta-text p {
+  margin: 0;
+
+  font-size: 26px;
+
+  line-height: 1.2;
+
+  font-weight: 600;
+}
+
+
+.Food-cta-text small {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 15px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-weight: 400;
+}
+
+
+/* ---------------------------------------------------------
+   8.2 CTA BUTTONS
+--------------------------------------------------------- */
+
+.Food-cta-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.Food-cta-primary,
+.Food-cta-secondary {
+  height: 42px;
+
+  padding: 0 22px;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.Food-cta-primary {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  background: #ffffff;
+
+  color: #0a634a;
+
+  border: none;
+}
+
+
+.Food-cta-secondary {
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.70);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   9. RESPONSIVE DESIGN
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   9.1 TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 980px) {
+
+  .Food-hero-copy h1 {
+    font-size: 48px;
+  }
+
+
+  .Food-hero-copy h2 {
+    font-size: 26px;
+  }
+
+
+  .Food-trust-inner {
+    grid-template-columns: 1fr;
+  }
+
+
+  .Food-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .Food-solution {
+    grid-template-columns: 1fr;
+  }
+
+
+  .Food-sustainability {
+    grid-template-columns: 1fr;
+  }
+
+
+  .Food-stats-inner {
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 18px 0;
+  }
+
+
+  .Food-stat:nth-child(2) {
+    border-right: none;
+  }
+
+
+  .Food-cta {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   9.2 MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .Food-hero-inner,
+  .Food-trust,
+  .Food-cards,
+  .Food-solution,
+  .Food-sustainability,
+  .Food-stats-inner {
+    width: min(100%, calc(100% - 32px));
+  }
+
+
+  /* Hero */
+
+  .Food-hero {
+    min-height: 620px;
+  }
+
+
+  .Food-hero-row {
+    display: block;
+  }
+
+
+  .Food-hero-copy {
+    padding-top: 20px;
+  }
+
+
+  .Food-hero-copy h1 {
+    font-size: 42px;
+  }
+
+
+  .Food-hero-copy h2 {
+    font-size: 23px;
+  }
+
+
+  .Food-hero-copy p {
+    font-size: 15px;
+  }
+
+
+  .Food-hero-aside {
+    display: none;
+  }
+
+
+  .Food-hero-features {
+    position: static;
+
+    margin-top: 22px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 100%;
+  }
+
+
+  .Food-feature {
+    min-width: 0;
+
+    padding: 12px;
+  }
+
+
+  .Food-feature:nth-child(2) {
+    border-right: none;
+  }
+
+
+  /* Breadcrumb */
+
+  .Food-breadcrumb {
+    font-size: 12px;
+
+    gap: 7px;
+  }
+
+
+  /* Trust */
+
+  .Food-trust {
+    margin-top: 12px;
+
+    padding-top: 10px;
+  }
+
+
+  .Food-trust-copy h2 {
+    font-size: 34px;
+  }
+
+
+  .Food-trust-copy p {
+    font-size: 15px;
+  }
+
+
+  .Food-trust-visual {
+    min-height: 250px;
+  }
+
+
+  .Food-trust-badges {
+    width: 40%;
+
+    padding: 16px 12px;
+  }
+
+
+  .Food-trust-badges span {
+    font-size: 13px;
+  }
+
+
+  /* Cards */
+
+  .Food-cards {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+
+  .Food-card {
+    min-height: 100px;
+
+    padding: 16px;
+  }
+
+
+  .Food-card h3 {
+    font-size: 17px;
+  }
+
+
+  .Food-card p {
+    font-size: 13px;
+  }
+
+
+  /* Solution */
+
+  .Food-solution {
+    margin-top: 22px;
+  }
+
+
+  .Food-solution-visual {
+    min-height: 300px;
+  }
+
+
+  .Food-solution-overlay {
+    width: 42%;
+
+    padding: 18px 14px;
+  }
+
+
+  .Food-solution-overlay span {
+    font-size: 19px;
+  }
+
+
+  .Food-solution-content h2 {
+    font-size: 34px;
+  }
+
+
+  .Food-solution-content p {
+    font-size: 15px;
+  }
+
+
+  .Food-solution-content li {
+    font-size: 14px;
+  }
+
+
+  /* Stats */
+
+  .Food-stats {
+    margin-top: 24px;
+  }
+
+
+  .Food-stats-inner {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+    padding: 10px 0;
+  }
+
+
+  .Food-stat {
+    justify-content: flex-start;
+
+    border-right: none;
+
+    border-bottom: 1px solid #d9e8e1;
+
+    padding: 14px 10px;
+  }
+
+
+  .Food-stat:last-child {
+    border-bottom: none;
+  }
+
+
+  /* Sustainability */
+
+  .Food-sustainability {
+    margin-top: 22px;
+  }
+
+
+  .Food-sustainability-visual {
+    min-height: 220px;
+  }
+
+
+  .Food-sustainability-overlay {
+    width: 45%;
+
+    padding: 18px 14px;
+  }
+
+
+  .Food-sustainability-overlay span {
+    font-size: 18px;
+  }
+
+
+  .Food-sustainability-content h2 {
+    font-size: 34px;
+  }
+
+
+  .Food-sustainability-content p {
+    font-size: 15px;
+  }
+
+
+  /* CTA */
+
+  .Food-cta {
+    width: calc(100% - 32px);
+
+    margin-top: 24px;
+
+    padding: 20px 18px;
+  }
+
+
+  .Food-cta-text {
+    align-items: flex-start;
+  }
+
+
+  .Food-cta-text p {
+    font-size: 20px;
+  }
+
+
+  .Food-cta-text small {
+    font-size: 13px;
+  }
+
+
+  .Food-cta-actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .Food-cta-primary,
+  .Food-cta-secondary {
+    width: 100%;
+  }
+
+}

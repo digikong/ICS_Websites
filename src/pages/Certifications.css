@@ -1,0 +1,711 @@
+/* =========================================================
+   Page layout
+========================================================= */
+
+.certifications-page {
+  color: #17231e;
+}
+
+.certifications-container {
+  width: calc(100% - 60px);
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   Hero section
+========================================================= */
+
+.certifications-hero {
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.certifications-hero > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.certifications-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 44, 31, 0.98),
+    rgba(0, 54, 39, 0.78) 33%,
+    rgba(0, 54, 39, 0.08) 75%
+  );
+}
+
+.certifications-hero-content {
+  position: absolute;
+  inset: 0;
+  padding-top: 25px;
+}
+
+.certifications-breadcrumb {
+  margin-top: 25px;
+  font-size: 15px;
+}
+
+.certifications-breadcrumb span {
+  padding: 0 8px;
+  color: #b8dacc;
+}
+
+.certifications-hero h1 {
+  margin-top: 25px;
+  font-size: 31px;
+  line-height: 1.1;
+}
+
+.certifications-hero h1 span,
+.certification-heading h2 span,
+.facility-heading h2 span,
+.certification-cta h2 span {
+  color: #5bd444;
+}
+
+.certifications-hero p {
+  margin-top: 13px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   Process panel
+========================================================= */
+
+.process-panel {
+  position: relative;
+  z-index: 2;
+  margin-top: -35px;
+  padding: 14px 22px 22px;
+  border-radius: 9px;
+  background: white;
+  box-shadow: 0 3px 19px rgba(0, 50, 33, 0.1);
+}
+
+/* =========================================================
+   Section headings
+========================================================= */
+
+.certification-heading {
+  text-align: center;
+}
+
+.certification-heading h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.certification-heading h2::before,
+.certification-heading h2::after {
+  content: "";
+  display: inline-block;
+  width: 19px;
+  height: 2px;
+  margin: 0 7px 6px;
+  background: #087b57;
+}
+
+.certification-heading p {
+  margin: 5px 0 15px;
+  color: #515c56;
+  font-size: 15px;
+}
+
+.certification-list-heading {
+  margin-top: 5px;
+}
+
+/* =========================================================
+   Process steps
+========================================================= */
+
+.process-track {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 7px;
+}
+
+.process-step {
+  position: relative;
+  min-height: 119px;
+  padding: 22px 7px 8px;
+  border: 1px solid #edf1ef;
+  border-radius: 7px;
+  background: white;
+  color: #1c2722;
+}
+
+.process-step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 54px;
+  right: -13px;
+  z-index: 3;
+  color: #075c3e;
+  font-size: 22px;
+}
+
+.process-step b {
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 10px);
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #075c3e;
+  color: white;
+  font-size: 8px;
+}
+
+.process-step i {
+  width: 49px;
+  height: 49px;
+  margin: 0 auto 7px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #edf6f1;
+  color: #075c3e;
+  font-style: normal;
+}
+
+.process-step strong {
+  display: block;
+  font-size: 15px;
+}
+
+.process-step span {
+  display: block;
+  min-height: 22px;
+  margin-top: 6px;
+  color: #5d6862;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.process-step.active {
+  border-color: #8ac7a9;
+  box-shadow: 0 4px 12px rgba(0, 91, 61, 0.09);
+}
+
+.process-step.active i {
+  background: #dff2e8;
+}
+
+/* =========================================================
+   Process details
+========================================================= */
+
+.process-detail {
+  min-height: 32px;
+  margin: 13px 0 18px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 5px;
+  background: #f2f8f4;
+  color: #496258;
+  font-size: 15px;
+}
+
+.process-detail svg {
+  color: #087b57;
+}
+
+.process-detail strong {
+  color: #075c3e;
+}
+
+/* =========================================================
+   Certifications grid
+========================================================= */
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.certification-card {
+  min-height: 110px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #eef2f0;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.certification-card:hover,
+.certification-facility-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 17px rgba(0, 69, 45, 0.1);
+}
+
+.certification-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.certification-card strong {
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.certification-card span {
+  margin-top: 3px;
+  color: #5c6861;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   Quality highlights
+========================================================= */
+
+.certification-quality {
+  padding: 12px 0;
+  background: #f1f8f4;
+}
+
+.quality-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.quality-items > div {
+  min-height: 50px;
+  padding: 5px 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-right: 1px solid #dce7e1;
+}
+
+.quality-items > div:last-child {
+  border: 0;
+}
+
+.quality-items svg {
+  flex-shrink: 0;
+  color: #087b57;
+}
+
+.quality-items span {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.quality-items strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #075c3e;
+  font-size: 15px;
+}
+
+/* =========================================================
+   Facilities
+========================================================= */
+/* 
+.facilities-area {
+  padding: 21px 0 18px;
+}
+
+.facility-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px 10px;
+}
+
+.facility-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.facility-heading button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  background: transparent;
+  color: #087b57;
+  font-size: 9px;
+  font-weight: 700;
+} */
+
+.certification-facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.certification-facility-card {
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #e2eae5;
+  border-radius: 7px;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.certification-facility-card img {
+  width: 100%;
+  height: 105px;
+  display: block;
+  object-fit: cover;
+}
+
+.certification-facility-card div {
+  padding: 11px 12px;
+}
+
+.certification-facility-card h3 {
+  margin: 0 0 6px;
+  font-size: 10px;
+}
+
+.certification-facility-card p {
+  margin: 0;
+  color: #59655f;
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   Call-to-action section
+========================================================= */
+
+.certification-cta {
+  padding: 10px 0 14px;
+}
+
+.certification-cta > div {
+  min-height: 110px;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-radius: 7px;
+  background: #005b3d;
+  color: white;
+}
+
+.certification-cta > div > svg {
+  flex-shrink: 0;
+}
+
+.certification-cta h2 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.15;
+}
+
+.certification-cta p {
+  max-width: 250px;
+  margin-top: 7px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.certification-cta button,
+.certification-cta a {
+  min-width: 125px;
+  height: 34px;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 5px;
+  background: white;
+  color: #075c3e;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.certification-cta a {
+  min-width: 170px;
+  margin-left: 0;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+}
+
+/* =========================================================
+   Inquiry section
+========================================================= */
+
+.certification-inquiry {
+  width: calc(100% - 60px);
+  max-width: 900px;
+  margin: 0 auto 22px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #dce9e2;
+  border-radius: 7px;
+}
+
+.certification-inquiry h2 {
+  margin: 0;
+  color: #075c3e;
+  font-size: 17px;
+}
+
+.certification-inquiry p {
+  margin-top: 5px;
+  color: #5d6862;
+  font-size: 9px;
+}
+
+.certification-inquiry form {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.certification-inquiry input {
+  width: 100%;
+  height: 31px;
+  padding: 0 9px;
+  border: 1px solid #dce6e0;
+  border-radius: 4px;
+  font-size: 9px;
+}
+
+.certification-inquiry input:nth-child(3) {
+  grid-column: 1 / 3;
+}
+
+.certification-inquiry button {
+  height: 31px;
+  border: 0;
+  border-radius: 4px;
+  background: #087b57;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   Details modal
+========================================================= */
+
+.certification-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 35, 25, 0.65);
+}
+
+.certification-modal {
+  position: relative;
+  width: min(610px, 100%);
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 20px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+}
+
+.certification-modal > img {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.certification-modal-close {
+  position: absolute;
+  top: 9px;
+  right: 11px;
+  width: 27px;
+  height: 27px;
+  border: 0;
+  border-radius: 50%;
+  background: #edf6f1;
+  color: #075c3e;
+  font-size: 20px;
+}
+
+.certification-modal span {
+  color: #087b57;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.certification-modal h2 {
+  margin: 7px 0;
+  color: #075c3e;
+  font-size: 22px;
+}
+
+.certification-modal p {
+  margin: 0 0 15px;
+  color: #5c6861;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.certification-modal div > button {
+  height: 33px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 4px;
+  background: #075c3e;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   Tablet responsive styles
+========================================================= */
+
+@media (max-width: 900px) {
+  .process-track {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 18px;
+  }
+
+  .process-step:nth-child(4)::after,
+  .process-step:nth-child(7)::after {
+    display: none;
+  }
+
+  .certification-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .quality-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quality-items > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .certification-facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   Mobile responsive styles
+========================================================= */
+
+@media (max-width: 600px) {
+  .certifications-container {
+    width: calc(100% - 30px);
+  }
+
+  .certifications-hero {
+    height: 330px;
+  }
+
+  .certifications-hero p br {
+    display: none;
+  }
+
+  .process-panel {
+    padding: 14px 12px;
+  }
+
+  .process-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-step:not(:last-child)::after {
+    display: none;
+  }
+
+  .certification-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quality-items {
+    grid-template-columns: 1fr;
+  }
+
+  .quality-items > div {
+    border-right: 0;
+    border-bottom: 1px solid #dce7e1;
+  }
+
+  .certification-facilities-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .certification-facility-card img {
+    height: 85px;
+  }
+
+  .certification-cta > div {
+    flex-wrap: wrap;
+    padding: 17px;
+  }
+
+  .certification-cta button,
+  .certification-cta a {
+    margin-left: 0;
+  }
+
+  .certification-inquiry {
+    width: calc(100% - 30px);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .certification-inquiry form {
+    width: 100%;
+  }
+
+  .certification-modal {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .certification-modal > img {
+    height: 130px;
+  }
+}

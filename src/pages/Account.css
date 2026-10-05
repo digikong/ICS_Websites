@@ -1,0 +1,1026 @@
+/* =========================================================
+   ACCOUNT PAGE
+========================================================= */
+
+/* ================= #1 ACCOUNT PAGE ================= */
+
+.account-page {
+  color: #17231e;
+}
+
+/* ================= ACCOUNT CONTAINER ================= */
+
+.account-container {
+  width: calc(100% - 60px);
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   #2 ACCOUNT HERO
+========================================================= */
+
+/* ================= HERO SECTION ================= */
+
+.account-hero {
+  position: relative;
+
+  height: 440px;
+
+  overflow: hidden;
+
+  color: white;
+}
+
+/* ================= HERO IMAGE ================= */
+
+.account-hero > img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* ================= HERO OVERLAY ================= */
+
+.account-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 43, 31, 0.98),
+      rgba(0, 55, 39, 0.75) 39%,
+      rgba(0, 55, 39, 0.08) 76%
+    );
+}
+
+/* ================= HERO CONTENT ================= */
+
+.account-hero-content {
+  position: absolute;
+  inset: 0;
+
+  padding-top: 23px;
+}
+
+/* ================= BREADCRUMB ================= */
+
+.account-breadcrumb {
+  margin-top: 18px;
+
+  font-size: 15px;
+}
+
+.account-breadcrumb span {
+  padding: 0 8px;
+
+  color: #b8dacc;
+}
+
+/* ================= HERO TITLE ================= */
+
+.account-hero h1 {
+  margin: 0;
+
+  font-size: 29px;
+  margin-top: 18px;
+}
+
+/* ================= HERO DESCRIPTION ================= */
+
+.account-hero p {
+   margin-top: 18px;
+
+  font-size: 15px;
+}
+
+/* ================= HERO GREEN LINE ================= */
+
+.account-hero-content i {
+  display: block;
+
+  width: 31px;
+  height: 2px;
+
+  margin-top: 12px;
+
+  background: #5bd444;
+}
+
+
+/* =========================================================
+   #3 ACCOUNT LAYOUT
+========================================================= */
+
+.account-layout {
+  display: grid;
+  grid-template-columns: 164px 1fr;
+
+  gap: 16px;
+
+  margin-top: 12px;
+}
+
+
+/* =========================================================
+   #4 ACCOUNT SIDEBAR
+========================================================= */
+
+/* ================= SIDEBAR ================= */
+
+.account-sidebar {
+  min-width: 0;
+}
+
+/* ================= ACCOUNT USER ================= */
+
+.account-user {
+  min-height: 83px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 11px;
+
+  background: white;
+
+  border: 1px solid #e1e9e4;
+  border-radius: 7px;
+
+  box-shadow: 0 2px 7px rgba(0, 50, 30, 0.04);
+}
+
+/* ================= ACCOUNT AVATAR ================= */
+
+.account-avatar {
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #eef3f1;
+  color: #a0aaa5;
+}
+
+/* ================= ACCOUNT USER DETAILS ================= */
+
+.account-user div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.account-user strong {
+  font-size: 15px;
+}
+
+.account-user b {
+  margin-top: 2px;
+
+  font-size: 12px;
+}
+
+.account-user span {
+  margin-top: 3px;
+
+  overflow: hidden;
+
+  color: #5f6c64;
+
+  font-size: 12px;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   #5 SIDEBAR NAVIGATION
+========================================================= */
+
+/* ================= NAVIGATION BOX ================= */
+
+.account-sidebar nav {
+  margin-top: 8px;
+
+  padding: 4px 0;
+
+  background: white;
+
+  border: 1px solid #e1e9e4;
+  border-radius: 7px;
+}
+
+/* ================= NAVIGATION BUTTON ================= */
+
+.account-sidebar nav button {
+  width: 100%;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 11px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #28362f;
+
+  text-align: left;
+
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+/* ================= NAVIGATION ICON ================= */
+
+.account-sidebar nav button svg {
+  color: #4b5a52;
+}
+
+/* ================= ACTIVE NAVIGATION ================= */
+
+.account-sidebar nav button.active {
+  background: #eff7f3;
+  color: #075c3e;
+
+  font-weight: 700;
+}
+
+.account-sidebar nav button.active svg {
+  color: #087b57;
+}
+
+/* ================= NOTIFICATION COUNT ================= */
+
+.account-sidebar nav button em {
+  width: 15px;
+  height: 15px;
+
+  margin-left: auto;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #19934d;
+  color: white;
+
+  font-size: 15px;
+  font-style: normal;
+}
+
+
+/* =========================================================
+   #6 ACCOUNT SUPPORT
+========================================================= */
+
+/* ================= SUPPORT BOX ================= */
+
+.account-support {
+  margin-top: 10px;
+
+  padding: 13px 12px;
+
+  border-radius: 7px;
+
+  background: #edf7f2;
+}
+
+/* ================= SUPPORT TITLE ================= */
+
+.account-support strong {
+  color: #075c3e;
+
+  font-size: 12px;
+}
+
+/* ================= SUPPORT DESCRIPTION ================= */
+
+.account-support p {
+  margin: 9px 0;
+
+  color: #536259;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ================= SUPPORT LINKS ================= */
+
+.account-support a {
+  min-height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  margin-top: 5px;
+
+  border-radius: 4px;
+
+  color: #075c3e;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+/* ================= FIRST SUPPORT LINK ================= */
+
+.account-support a:first-of-type {
+  background: #075c3e;
+  color: white;
+}
+
+
+/* =========================================================
+   #7 ACCOUNT CONTENT
+========================================================= */
+
+/* ================= CONTENT ================= */
+
+.account-content {
+  min-width: 0;
+}
+
+/* ================= CONTENT HEADING ================= */
+
+.account-content-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin: 4px 0 13px;
+}
+
+/* ================= CONTENT TITLE ================= */
+
+.account-content-heading h2 {
+  margin: 0;
+
+  font-size: 18px;
+}
+
+/* ================= CONTENT DESCRIPTION ================= */
+
+.account-content-heading p {
+  margin-top: 4px;
+
+  color: #526057;
+
+  font-size: 15px;
+}
+
+/* ================= CUSTOMER ID ================= */
+
+.account-content-heading > span {
+  padding-top: 6px;
+
+  font-size: 15px;
+}
+
+.account-content-heading > span strong {
+  color: #075c3e;
+}
+
+
+/* =========================================================
+   #8 ACCOUNT STATS
+========================================================= */
+
+/* ================= STATS GRID ================= */
+
+.account-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 9px;
+
+  margin-bottom: 12px;
+}
+
+/* ================= STAT CARD ================= */
+
+.account-stats > div {
+  min-height: 66px;
+
+  display: grid;
+  grid-template-columns: 29px 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  column-gap: 7px;
+
+  padding: 10px;
+
+  background: white;
+
+  border: 1px solid #e4ebe7;
+  border-radius: 7px;
+
+  box-shadow: 0 2px 7px rgba(0, 50, 30, 0.04);
+}
+
+/* ================= STAT ICON ================= */
+
+.account-stats svg {
+  width: 29px;
+  height: 29px;
+
+  grid-row: 1 / 3;
+  align-self: center;
+
+  padding: 7px;
+
+  border-radius: 50%;
+
+  background: #1d9a4f;
+  color: white;
+}
+
+/* ================= STAT ICON COLORS ================= */
+
+.account-stats > div:nth-child(2) svg {
+  background: #3779d3;
+}
+
+.account-stats > div:nth-child(3) svg {
+  background: #e68b18;
+}
+
+.account-stats > div:nth-child(4) svg {
+  background: #7454d5;
+}
+
+/* ================= STAT NUMBER ================= */
+
+.account-stats strong {
+  font-size: 17px;
+  line-height: 1;
+}
+
+/* ================= STAT LABEL ================= */
+
+.account-stats span {
+  font-size: 15px;
+}
+
+/* ================= STAT LINK ================= */
+
+.account-stats a {
+  grid-column: 2;
+
+  color: #075c3e;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   #9 ACCOUNT TABLE
+========================================================= */
+
+/* ================= TABLE SECTION ================= */
+
+.account-table-section {
+  margin-bottom: 10px;
+
+  background: white;
+
+  border: 1px solid #e4ebe7;
+  border-radius: 7px;
+
+  box-shadow: 0 2px 7px rgba(0, 50, 30, 0.04);
+}
+
+/* ================= TABLE HEADING ================= */
+
+.account-table-heading {
+  min-height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 11px;
+
+  border-bottom: 1px solid #e4ebe7;
+}
+
+/* ================= TABLE TITLE ================= */
+
+.account-table-heading h3,
+.account-quick-actions h3 {
+  margin: 0;
+
+  font-size: 15px;
+}
+
+/* ================= TITLE GREEN LINE ================= */
+
+.account-table-heading h3::before,
+.account-quick-actions h3::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 22px;
+  height: 2px;
+
+  margin: 0 6px 3px 0;
+
+  background: #087b57;
+}
+
+/* ================= TABLE ACTION ================= */
+
+.account-table-heading a {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  color: #075c3e;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+/* ================= TABLE WRAPPER ================= */
+
+.account-table-wrap {
+  overflow-x: auto;
+}
+
+/* ================= TABLE ================= */
+
+.account-table-section table {
+  width: 100%;
+  min-width: 520px;
+
+  border-collapse: collapse;
+}
+
+/* ================= TABLE CELLS ================= */
+
+.account-table-section th,
+.account-table-section td {
+  height: 26px;
+
+  padding: 0 11px;
+
+  border-bottom: 1px solid #edf1ef;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  font-size: 15px;
+}
+
+/* ================= TABLE HEADER ================= */
+
+.account-table-section th {
+  color: #25332c;
+  font-weight: 700;
+}
+
+/* ================= TABLE DATA ================= */
+
+.account-table-section td {
+  color: #46534b;
+}
+
+/* ================= LAST ROW ================= */
+
+.account-table-section tr:last-child td {
+  border: 0;
+}
+
+
+/* =========================================================
+   #10 STATUS BADGES
+========================================================= */
+
+/* ================= COMMON STATUS ================= */
+
+.status {
+  padding: 3px 8px;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+}
+
+/* ================= PENDING ================= */
+
+.status.pending {
+  background: #fff0ca;
+  color: #b67900;
+}
+
+/* ================= IN PROGRESS ================= */
+
+.status.in-progress {
+  background: #dceeff;
+  color: #3479bf;
+}
+
+/* ================= REPLIED ================= */
+
+.status.replied {
+  background: #dff3e3;
+  color: #299052;
+}
+
+/* ================= DELIVERED ================= */
+
+.status.delivered {
+  background: #dff3e3;
+  color: #299052;
+}
+
+/* ================= CLOSED ================= */
+
+.status.closed {
+  background: #e8ebeb;
+  color: #5e6864;
+}
+
+/* ================= IN TRANSIT ================= */
+
+.status.in-transit {
+  background: #dceeff;
+  color: #3479bf;
+}
+
+
+/* =========================================================
+   #11 QUICK ACTIONS
+========================================================= */
+
+/* ================= QUICK ACTIONS SECTION ================= */
+
+.account-quick-actions {
+  margin-top: 13px;
+}
+
+/* ================= QUICK ACTIONS GRID ================= */
+
+.account-quick-actions > div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 8px;
+
+  margin-top: 9px;
+}
+
+/* ================= QUICK ACTION LINK ================= */
+
+.account-quick-actions a {
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px;
+
+  background: white;
+
+  border: 1px solid #e4ebe7;
+  border-radius: 6px;
+
+  color: #075c3e;
+
+  box-shadow: 0 2px 7px rgba(0, 50, 30, 0.04);
+
+  text-decoration: none;
+}
+
+/* ================= QUICK ACTION TEXT ================= */
+
+.account-quick-actions a span {
+  flex: 1;
+
+  color: #29362f;
+
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.account-quick-actions a strong {
+  color: #17231e;
+}
+
+/* ================= QUICK ACTION ARROW ================= */
+
+.account-quick-actions a > svg:last-child {
+  color: #7d8982;
+}
+
+
+/* =========================================================
+   #12 ACCOUNT BENEFITS
+========================================================= */
+
+/* ================= BENEFITS SECTION ================= */
+
+.account-benefits {
+  padding: 11px 0;
+
+  margin-top: 15px;
+
+  background: #f1f8f4;
+}
+
+/* ================= BENEFITS GRID ================= */
+
+.account-benefits .account-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ================= BENEFIT ITEM ================= */
+
+.account-benefits .account-container > div {
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 5px 25px;
+
+  border-right: 1px solid #dce7e1;
+}
+
+.account-benefits .account-container > div:last-child {
+  border: 0;
+}
+
+/* ================= BENEFIT ICON ================= */
+
+.account-benefits svg {
+  flex-shrink: 0;
+
+  color: #087b57;
+}
+
+/* ================= BENEFIT TEXT ================= */
+
+.account-benefits span {
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* ================= BENEFIT TITLE ================= */
+
+.account-benefits strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #075c3e;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   #13 ACCOUNT PLACEHOLDER
+========================================================= */
+
+/* ================= PLACEHOLDER AND PROFILE PANEL ================= */
+
+.account-placeholder,
+.profile-panel {
+  min-height: 270px;
+
+  padding: 28px;
+
+  background: white;
+
+  border: 1px solid #e4ebe7;
+  border-radius: 7px;
+}
+
+/* ================= PLACEHOLDER ================= */
+
+.account-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 9px;
+
+  text-align: center;
+}
+
+/* ================= PLACEHOLDER ICON ================= */
+
+.account-placeholder svg {
+  color: #087b57;
+}
+
+/* ================= PLACEHOLDER TITLE ================= */
+
+.account-placeholder h3,
+.profile-panel h3 {
+  margin: 0;
+
+  color: #075c3e;
+
+  font-size: 16px;
+}
+
+/* ================= PLACEHOLDER DESCRIPTION ================= */
+
+.account-placeholder p,
+.profile-panel > p {
+  margin: 0;
+
+  color: #5c6861;
+
+  font-size: 15px;
+}
+
+/* ================= PLACEHOLDER LINK ================= */
+
+.account-placeholder a {
+  height: 32px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 0 12px;
+
+  border-radius: 4px;
+
+  background: #075c3e;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   #14 PROFILE PANEL
+========================================================= */
+
+/* ================= PROFILE ICON ================= */
+
+.profile-panel-icon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 12px;
+
+  border-radius: 50%;
+
+  background: #edf7f2;
+  color: #087b57;
+}
+
+/* ================= PROFILE FORM ================= */
+
+.profile-panel form {
+  margin-top: 20px;
+}
+
+/* ================= PROFILE FORM ROW ================= */
+
+.profile-panel form > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  margin-bottom: 10px;
+}
+
+/* ================= PROFILE LABEL ================= */
+
+.profile-panel label {
+  color: #4f5d54;
+
+  font-size: 15px;
+}
+
+/* ================= PROFILE INPUT ================= */
+
+.profile-panel input {
+  width: 100%;
+  height: 33px;
+
+  margin-top: 5px;
+
+  padding: 0 9px;
+
+  border: 1px solid #dce6e0;
+  border-radius: 4px;
+
+  font-size: 15px;
+}
+
+/* ================= PROFILE BUTTON ================= */
+
+.profile-panel button {
+  height: 32px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 0 13px;
+
+  border: 0;
+  border-radius: 4px;
+
+  background: #075c3e;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   #15 RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+  /* ================= ACCOUNT LAYOUT ================= */
+
+  .account-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* ================= SIDEBAR NAVIGATION ================= */
+
+  .account-sidebar nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .account-sidebar nav button {
+    border-right: 1px solid #edf1ef;
+  }
+
+  /* ================= SUPPORT BOX ================= */
+
+  .account-support {
+    display: none;
+  }
+
+  /* ================= ACCOUNT STATS ================= */
+
+  .account-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ================= ACCOUNT BENEFITS ================= */
+
+  .account-benefits .account-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .account-benefits .account-container > div {
+    border-bottom: 1px solid #dce7e1;
+  }
+
+  /* ================= QUICK ACTIONS ================= */
+
+  .account-quick-actions > div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

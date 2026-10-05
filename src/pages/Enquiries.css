@@ -1,0 +1,831 @@
+/* ================================
+   Main Layout
+================================ */
+
+.enquiries-page {
+  color: #17231e;
+}
+
+.enquiries-container {
+  width: calc(100% - 60px);
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* ================================
+   Hero Section
+================================ */
+
+.enquiries-hero {
+  position: relative;
+  height: 440px;
+  overflow: hidden;
+}
+
+.enquiries-hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% center;
+}
+
+.enquiries-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 43, 31, 0.98),
+    rgba(0, 55, 39, 0.78) 42%,
+    rgba(0, 55, 39, 0.08) 77%
+  );
+}
+
+.enquiries-hero-content {
+  position: absolute;
+  inset: 0;
+  padding-top: 23px;
+  color: white;
+}
+
+.enquiries-breadcrumb {
+  margin-top: 18px;
+  font-size: 15px;
+}
+
+.enquiries-breadcrumb span {
+  padding: 0 7px;
+  color: #b8dacc;
+}
+
+.enquiries-hero h1 {
+  margin: 0;
+  font-size: 27px;
+  margin-top: 18px;
+}
+
+.enquiries-hero p {
+  margin-top: 18px;
+  font-size: 15px;
+}
+
+.enquiries-hero-content i {
+  display: block;
+  width: 31px;
+  height: 2px;
+  margin-top: 12px;
+  background: #5bd444;
+}
+
+/* ================================
+   Main Enquiries Layout
+================================ */
+
+.enquiries-layout {
+  display: grid;
+  grid-template-columns: 158px 1fr;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.enquiries-sidebar {
+  min-width: 0;
+}
+
+.enquiries-content {
+  min-width: 0;
+}
+
+/* ================================
+   Sidebar User
+================================ */
+
+.enquiry-user {
+  min-height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #e1e9e4;
+  border-radius: 7px;
+  background: white;
+}
+
+.enquiry-user > div {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eaf0ed;
+  color: #8b9991;
+  font-size: 30px;
+}
+
+.enquiry-user > span {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.enquiry-user strong {
+  font-size: 12px;
+}
+
+.enquiry-user small {
+  margin-top: 3px;
+  font-size: 10px;
+}
+
+/* ================================
+   Sidebar Navigation
+================================ */
+
+.enquiries-sidebar nav {
+  margin-top: 8px;
+  padding: 3px 0;
+  border: 1px solid #e1e9e4;
+  border-radius: 7px;
+  background: white;
+}
+
+.enquiries-sidebar nav a {
+  min-height: 31px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #28362f;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.enquiries-sidebar nav a.active {
+  background: #edf7f2;
+  color: #075c3e;
+  font-weight: 700;
+}
+
+.enquiries-sidebar nav a svg {
+  color: #53655a;
+}
+
+.enquiries-sidebar nav a em {
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #19934d;
+  color: white;
+  font-size: 15px;
+  font-style: normal;
+}
+
+/* ================================
+   Sidebar Help
+================================ */
+
+.enquiry-help {
+  margin-top: 9px;
+  padding: 12px;
+  border-radius: 7px;
+  background: #edf7f2;
+}
+
+.enquiry-help strong {
+  color: #075c3e;
+  font-size: 15px;
+}
+
+.enquiry-help p {
+  margin: 7px 0;
+  color: #526158;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.enquiry-help a {
+  min-height: 27px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 4px;
+  color: #075c3e;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.enquiry-help a:first-of-type {
+  background: #075c3e;
+  color: white;
+}
+
+/* ================================
+   Page Heading
+================================ */
+
+.enquiries-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+
+.enquiries-heading h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.enquiries-heading p {
+  margin-top: 4px;
+  color: #526057;
+  font-size: 15px;
+}
+
+.enquiries-heading > span {
+  padding-top: 5px;
+  font-size: 15px;
+}
+
+.enquiries-heading strong {
+  color: #075c3e;
+}
+
+/* ================================
+   Enquiry Statistics
+================================ */
+
+.enquiry-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 7px;
+  margin-bottom: 11px;
+}
+
+.enquiry-stats button {
+  min-height: 62px;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 6px;
+  border: 1px solid #e3ebe6;
+  border-radius: 6px;
+  background: white;
+  text-align: left;
+}
+
+.enquiry-stats button.active {
+  box-shadow: inset 0 -2px #087b57;
+}
+
+.enquiry-stats svg {
+  grid-row: 1 / 3;
+  align-self: center;
+  width: 27px;
+  height: 27px;
+  padding: 6px;
+  border-radius: 50%;
+  background: #1b9752;
+  color: white;
+}
+
+.enquiry-stats button:nth-child(2) svg {
+  background: #3d7ed7;
+}
+
+.enquiry-stats button:nth-child(3) svg {
+  background: #e48c19;
+}
+
+.enquiry-stats button:nth-child(4) svg {
+  background: #19874b;
+}
+
+.enquiry-stats button:nth-child(5) svg {
+  background: #808b91;
+}
+
+.enquiry-stats strong {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.enquiry-stats span {
+  font-size: 15px;
+}
+
+.enquiry-stats small {
+  grid-column: 2;
+  color: #075c3e;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ================================
+   Enquiry Table
+================================ */
+
+.enquiry-table-card {
+  overflow: hidden;
+  border: 1px solid #e3ebe6;
+  border-radius: 7px;
+  background: white;
+}
+
+.enquiry-table-header {
+  min-height: 39px;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e4ebe7;
+}
+
+.enquiry-table-header h3 {
+  margin: 0;
+  font-size: 11px;
+}
+
+.enquiry-table-header > div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.enquiry-table-header label {
+  width: 155px;
+  height: 26px;
+  padding: 0 7px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #dce6e0;
+  border-radius: 4px;
+  color: #526158;
+}
+
+.enquiry-table-header input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  font-size: 15px;
+}
+
+.enquiry-table-header select {
+  height: 26px;
+  border: 1px solid #dce6e0;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.enquiry-table-wrap {
+  overflow-x: auto;
+}
+
+.enquiry-table-card table {
+  width: 100%;
+  min-width: 630px;
+  border-collapse: collapse;
+}
+
+.enquiry-table-card th,
+.enquiry-table-card td {
+  height: 27px;
+  padding: 0 9px;
+  border-bottom: 1px solid #edf1ef;
+  white-space: nowrap;
+  text-align: left;
+  font-size: 15px;
+}
+
+.enquiry-table-card th {
+  color: #24332b;
+}
+
+.enquiry-table-card td {
+  color: #4d5c52;
+}
+
+.enquiry-view {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #35463c;
+}
+
+/* ================================
+   Enquiry Status
+================================ */
+
+.enquiry-status {
+  padding: 3px 8px;
+  border-radius: 9px;
+  font-size: 15px;
+}
+
+.enquiry-status.pending,
+.status-guide b.pending {
+  background: #fff0ca;
+  color: #bd7b00;
+}
+
+.enquiry-status.in-progress,
+.status-guide b.in-progress {
+  background: #dceeff;
+  color: #3479bf;
+}
+
+.enquiry-status.replied,
+.status-guide b.replied {
+  background: #dff3e3;
+  color: #299052;
+}
+
+.enquiry-status.closed,
+.status-guide b.closed {
+  background: #e8ebeb;
+  color: #5e6864;
+}
+
+/* ================================
+   Empty State
+================================ */
+
+.enquiry-empty {
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+  color: #68766d;
+  font-size: 15px;
+}
+
+.enquiry-empty svg {
+  color: #087b57;
+}
+
+.enquiry-empty strong {
+  color: #075c3e;
+  font-size: 15px;
+}
+
+.enquiry-empty button {
+  height: 27px;
+  padding: 0 10px;
+  border: 1px solid #087b57;
+  border-radius: 4px;
+  background: white;
+  color: #075c3e;
+  font-size: 15px;
+}
+
+/* ================================
+   Pagination
+================================ */
+
+.enquiry-pagination {
+  min-height: 38px;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #647169;
+  font-size: 15px;
+}
+
+.enquiry-pagination > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.enquiry-pagination button {
+  width: 23px;
+  height: 23px;
+  border: 1px solid #e0e8e3;
+  border-radius: 3px;
+  background: white;
+  font-size: 15px;
+}
+
+.enquiry-pagination button:disabled {
+  opacity: 0.4;
+}
+
+.enquiry-pagination strong {
+  width: 23px;
+  height: 23px;
+  display: grid;
+  place-items: center;
+  border-radius: 3px;
+  background: #075c3e;
+  color: white;
+  font-size: 15px;
+}
+
+/* ================================
+   Status Guide
+================================ */
+
+.status-guide {
+  margin-top: 10px;
+  padding: 11px;
+  border: 1px solid #e3ebe6;
+  border-radius: 7px;
+  background: #f8fbf9;
+}
+
+.status-guide h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.status-guide > p {
+  margin: 4px 0 10px;
+  font-size: 15px;
+}
+
+.status-guide > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.status-guide span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #56645b;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.status-guide b {
+  width: max-content;
+  padding: 3px 7px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* ================================
+   Enquiry CTA
+================================ */
+/* 
+.enquiry-cta {
+  min-height: 77px;
+  margin-top: 11px;
+  padding: 11px 25px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-radius: 7px;
+  background: #f0f8f4;
+}
+
+.enquiry-flask {
+  font-size: 78px;
+  color: #087b57;
+}
+
+.enquiry-cta span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 15px;
+}
+
+.enquiry-cta strong {
+  color: #075c3e;
+  font-size: 15px;
+}
+
+.enquiry-cta a {
+  min-width: 188px;
+  height: 31px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 4px;
+  background: #075c3e;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.enquiry-cta .enquiry-whatsapp {
+  min-width: 145px;
+  margin-left: 0;
+  border: 1px solid #75a48b;
+  background: white;
+  color: #075c3e;
+} */
+
+/* ================================
+   Bottom Benefits
+================================ */
+
+.enquiry-bottom-benefits {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 11px;
+  padding: 10px 0;
+  border: 1px solid #e3ebe6;
+  border-radius: 7px;
+  background: #f8fbf9;
+}
+
+.enquiry-bottom-benefits > div {
+  min-height: 45px;
+  padding: 4px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-right: 1px solid #dce7e1;
+}
+
+.enquiry-bottom-benefits > div:last-child {
+  border: 0;
+}
+
+.enquiry-bottom-benefits svg {
+  color: #087b57;
+}
+
+.enquiry-bottom-benefits span {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.enquiry-bottom-benefits strong {
+  display: block;
+  color: #17231e;
+  font-size: 15px;
+}
+
+/* ================================
+   Modal
+================================ */
+
+.enquiry-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 35, 25, 0.65);
+}
+
+.enquiry-modal {
+  position: relative;
+  width: min(340px, 100%);
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+  background: white;
+  text-align: center;
+}
+
+.enquiry-modal > button {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+}
+
+.enquiry-modal svg {
+  color: #087b57;
+}
+
+.enquiry-modal h2 {
+  margin: 0;
+  color: #075c3e;
+  font-size: 18px;
+}
+
+.enquiry-modal strong {
+  font-size: 15px;
+}
+
+.enquiry-modal p {
+  color: #56645b;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.enquiry-modal a {
+  height: 30px;
+  padding: 0 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 4px;
+  background: #075c3e;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+/* ================================
+   Responsive Design
+================================ */
+
+@media (max-width: 800px) {
+  .enquiries-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiries-sidebar nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .enquiry-help {
+    display: none;
+  }
+
+  .enquiry-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .enquiry-bottom-benefits {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .enquiry-bottom-benefits > div {
+    border-bottom: 1px solid #dce7e1;
+  }
+
+  .enquiry-cta {
+    flex-wrap: wrap;
+  }
+
+  .enquiry-cta a {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .enquiries-container {
+    width: calc(100% - 30px);
+  }
+
+  .enquiries-hero {
+    height: 190px;
+  }
+
+  .enquiries-sidebar nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .enquiry-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .enquiry-table-header {
+    align-items: flex-start;
+    gap: 8px;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .enquiry-table-header > div {
+    width: 100%;
+  }
+
+  .enquiry-table-header label {
+    flex: 1;
+  }
+
+  .status-guide > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .enquiry-bottom-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .enquiry-bottom-benefits > div {
+    padding: 6px 8px;
+  }
+
+  .enquiry-cta strong {
+    font-size: 15px;
+  }
+}

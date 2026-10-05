@@ -1,0 +1,1271 @@
+/* ========================================
+   GALLERY PAGE
+======================================== */
+
+.gallery-page {
+  color: #17231e;
+  background: #ffffff;
+}
+
+.gallery-container {
+  width: calc(100% - 60px);
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.gallery-hero {
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.gallery-hero > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 43%;
+}
+
+.gallery-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 42, 30, 0.98),
+    rgba(0, 55, 39, 0.78) 33%,
+    rgba(0, 55, 39, 0.08) 74%
+  );
+}
+
+.gallery-hero-content {
+  position: absolute;
+  inset: 0;
+  padding-top: 26px;
+}
+
+.gallery-breadcrumb {
+  margin-top: 28px;
+  font-size: 10px;
+}
+
+.gallery-breadcrumb span {
+  padding: 0 8px;
+  color: #b8dacc;
+}
+
+.gallery-hero h1 {
+  margin: 0;
+  margin-top: 28px;
+  font-size: 33px;
+}
+
+.gallery-hero h1 span,
+.gallery-heading strong,
+.gallery-cta h2 span {
+  color: #5bd444;
+}
+
+.gallery-hero p {
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   GALLERY DIRECTORY
+======================================== */
+
+.gallery-directory {
+  padding: 16px 0 17px;
+}
+
+
+/* ========================================
+   CATEGORY TABS
+======================================== */
+
+.gallery-tabs {
+  min-height: 49px;
+
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+
+  border: 1px solid #e6ede9;
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  background: white;
+
+  box-shadow:
+    0 2px 8px rgba(0, 50, 30, 0.04);
+}
+
+.gallery-tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  min-height: 49px;
+
+  border: 0;
+  border-right: 1px solid #e8eeeb;
+
+  background: white;
+
+  color: #202a25;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.gallery-tabs button:last-child {
+  border-right: 0;
+}
+
+.gallery-tabs button:hover {
+  background: #f1f8f4;
+}
+
+.gallery-tabs button svg {
+  color: #087b57;
+  flex-shrink: 0;
+}
+
+.gallery-tabs button.active {
+  background: #075c3e;
+  color: white;
+}
+
+.gallery-tabs button.active svg {
+  color: white;
+}
+
+
+/* ========================================
+   GALLERY HEADING
+======================================== */
+
+.gallery-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  margin: 25px 0 13px;
+}
+
+.gallery-heading > div > span {
+  color: #087b57;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.gallery-heading h2 {
+  margin: 5px 0 0;
+
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+
+/* ========================================
+   GALLERY GRID
+======================================== */
+
+.gallery-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 13px;
+}
+
+
+/* ========================================
+   GALLERY CARD
+======================================== */
+
+.gallery-card {
+  width: 100%;
+
+  overflow: hidden;
+
+  padding: 0;
+
+  border: 1px solid #e2eae5;
+  border-radius: 7px;
+
+  background: white;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 2px 7px rgba(0, 50, 30, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 18px rgba(0, 65, 43, 0.12);
+}
+
+
+/* ========================================
+   CARD IMAGE
+======================================== */
+
+.gallery-card-image {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.gallery-card-image img {
+  width: 100%;
+  height: 300px;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-card-image img {
+  transform: scale(1.04);
+}
+
+
+/* ========================================
+   EXPAND ICON
+======================================== */
+
+.gallery-card-image > span {
+  position: absolute;
+
+  right: 9px;
+  bottom: 8px;
+
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  color: #075c3e;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.gallery-card:hover .gallery-card-image > span {
+  transform: scale(1.08);
+
+  background: white;
+}
+
+
+/* ========================================
+   CARD CONTENT
+======================================== */
+
+.gallery-card-content {
+  padding: 9px 11px 10px;
+}
+
+.gallery-card h3 {
+  margin: 0 0 5px;
+
+  color: #17231e;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.gallery-card p {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  margin: 0;
+
+  color: #607068;
+
+  font-size: 15px;
+}
+
+.gallery-card p svg {
+  color: #087b57;
+  flex-shrink: 0;
+}
+
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+
+.gallery-empty {
+  grid-column: 1 / -1;
+
+  min-height: 190px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  border: 1px dashed #b5cfc1;
+  border-radius: 7px;
+
+  color: #69756e;
+
+  font-size: 10px;
+}
+
+.gallery-empty svg {
+  color: #087b57;
+}
+
+.gallery-empty strong {
+  color: #075c3e;
+
+  font-size: 13px;
+}
+
+.gallery-empty button {
+  height: 29px;
+
+  padding: 0 12px;
+
+  border: 1px solid #087b57;
+  border-radius: 4px;
+
+  background: white;
+
+  color: #075c3e;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.gallery-empty button:hover {
+  background: #075c3e;
+  color: white;
+}
+
+
+/* ========================================
+   PAGINATION
+======================================== */
+
+.gallery-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 44px;
+
+  color: #68736d;
+
+  font-size: 15px;
+}
+
+.gallery-pagination > div {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.gallery-pagination button {
+  width: 27px;
+  height: 27px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #dbe6e0;
+  border-radius: 4px;
+
+  background: white;
+
+  color: #087b57;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.gallery-pagination button:hover:not(:disabled) {
+  background: #075c3e;
+  color: white;
+}
+
+.gallery-pagination button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+.gallery-pagination strong {
+  color: #075c3e;
+
+  font-size: 10px;
+}
+
+
+/* ========================================
+   DYNAMIC STATS
+======================================== */
+
+.gallery-stats {
+  padding: 12px 0;
+
+  background: #f1f8f4;
+}
+
+.gallery-stats .gallery-container {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-stats .gallery-container > div {
+  min-height: 53px;
+
+  display: grid;
+
+  grid-template-columns: 33px 1fr;
+
+  grid-template-rows: 1fr 1fr;
+
+  align-items: center;
+
+  padding: 5px 35px;
+
+  border-right: 1px solid #dce7e1;
+}
+
+.gallery-stats .gallery-container > div:last-child {
+  border-right: 0;
+}
+
+.gallery-stats svg {
+  grid-row: 1 / 3;
+
+  color: #087b57;
+}
+
+.gallery-stats strong {
+  color: #17231e;
+
+  font-size: 18px;
+  line-height: 1;
+}
+
+.gallery-stats span {
+  color: #4f5d56;
+
+  font-size: 15px;
+}
+
+
+/* ========================================
+   CTA
+======================================== */
+
+.gallery-cta {
+  padding: 11px 0 15px;
+}
+
+.gallery-cta > div {
+  min-height: 110px;
+
+  padding: 15px 38px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  border-radius: 7px;
+
+  background: #005b3d;
+
+  color: white;
+}
+
+.gallery-flask {
+  width: 55px;
+  height: 65px;
+
+  display: grid;
+  place-items: center;
+
+  color: white;
+
+  font-size: 50px;
+
+  flex-shrink: 0;
+}
+
+.gallery-cta h2 {
+  margin: 0;
+
+  font-size: 19px;
+  line-height: 1.15;
+}
+
+.gallery-cta p {
+  max-width: 250px;
+
+  margin-top: 7px;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.gallery-cta a {
+  min-width: 125px;
+  height: 34px;
+
+  margin-left: auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  border-radius: 5px;
+
+  background: white;
+
+  color: #075c3e;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.gallery-cta a:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.gallery-cta .gallery-whatsapp {
+  min-width: 150px;
+
+  margin-left: 0;
+
+  border: 1px solid white;
+
+  background: transparent;
+
+  color: white;
+}
+
+
+/* ========================================
+   FULL SCREEN IMAGE MODAL
+======================================== */
+
+.gallery-modal-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 200;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  background: rgba(0, 20, 14, 0.82);
+
+  animation: galleryModalFade 0.2s ease;
+}
+
+@keyframes galleryModalFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ========================================
+   MODAL BOX
+======================================== */
+
+.gallery-modal {
+  position: relative;
+
+  width: min(1000px, 95vw);
+
+  height: min(720px, 90vh);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #071f17;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.45);
+
+  animation: galleryModalZoom 0.2s ease;
+}
+
+@keyframes galleryModalZoom {
+  from {
+    transform: scale(0.96);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+
+/* ========================================
+   MODAL IMAGE
+======================================== */
+
+.gallery-modal-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  padding: 55px 70px 45px;
+
+  user-select: none;
+}
+
+
+/* ========================================
+   MODAL CATEGORY LABEL
+======================================== */
+
+.gallery-modal-category {
+  position: absolute;
+
+  top: 18px;
+  left: 22px;
+
+  z-index: 3;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  color: #075c3e;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* ========================================
+   MODAL CLOSE BUTTON
+======================================== */
+
+.gallery-modal-close {
+  position: absolute;
+
+  top: 14px;
+  right: 16px;
+
+  z-index: 5;
+
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  color: #075c3e;
+
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.gallery-modal-close:hover {
+  transform: scale(1.08);
+
+  background: white;
+}
+
+
+/* ========================================
+   MODAL LEFT / RIGHT ARROWS
+======================================== */
+
+.gallery-modal-prev,
+.gallery-modal-next {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 4;
+
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  transform: translateY(-50%);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  border-radius: 50%;
+
+  background: rgba(0, 65, 43, 0.85);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.gallery-modal-prev {
+  left: 18px;
+}
+
+.gallery-modal-next {
+  right: 18px;
+}
+
+.gallery-modal-prev:hover,
+.gallery-modal-next:hover {
+  background: #075c3e;
+
+  transform:
+    translateY(-50%)
+    scale(1.05);
+}
+
+
+/* ========================================
+   MODAL PHOTO COUNTER
+======================================== */
+
+.gallery-modal-counter {
+  position: absolute;
+
+  bottom: 15px;
+  left: 50%;
+
+  z-index: 4;
+
+  transform: translateX(-50%);
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+  .gallery-tabs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .gallery-tabs button:nth-child(4) {
+    border-right: 0;
+  }
+
+  .gallery-tabs button:nth-child(-n + 4) {
+    border-bottom: 1px solid #e8eeeb;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-card-image img {
+    height: 240px;
+  }
+
+  .gallery-modal {
+    width: min(900px, 94vw);
+    height: min(650px, 88vh);
+  }
+}
+
+
+/* ========================================
+   TABLET SMALL
+======================================== */
+
+@media (max-width: 800px) {
+  .gallery-container {
+    width: calc(100% - 40px);
+  }
+
+  .gallery-hero {
+    height: 380px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-card-image img {
+    height: 220px;
+  }
+
+  .gallery-tabs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .gallery-tabs button {
+    min-height: 46px;
+
+    font-size: 12px;
+  }
+
+  .gallery-tabs button svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .gallery-stats .gallery-container > div {
+    padding: 5px 18px;
+  }
+
+  .gallery-cta > div {
+    padding: 20px 25px;
+  }
+
+  .gallery-modal {
+    width: 94vw;
+    height: 80vh;
+  }
+
+  .gallery-modal-image {
+    padding: 55px 55px 45px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .gallery-container {
+    width: calc(100% - 30px);
+  }
+
+
+  /* Hero */
+
+  .gallery-hero {
+    height: 300px;
+  }
+
+  .gallery-hero-content {
+    padding-top: 15px;
+  }
+
+  .gallery-breadcrumb {
+    margin-top: 18px;
+
+    font-size: 9px;
+  }
+
+  .gallery-hero h1 {
+    margin-top: 22px;
+
+    font-size: 28px;
+  }
+
+  .gallery-hero p {
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+
+  .gallery-hero p br {
+    display: none;
+  }
+
+
+  /* Category Tabs */
+
+  .gallery-tabs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-tabs button {
+    min-height: 48px;
+
+    gap: 4px;
+
+    padding: 6px 3px;
+
+    font-size: 9px;
+  }
+
+  .gallery-tabs button:nth-child(4) {
+    border-right: 1px solid #e8eeeb;
+  }
+
+  .gallery-tabs button:nth-child(3n) {
+    border-right: 0;
+  }
+
+  .gallery-tabs button:nth-child(-n + 6) {
+    border-bottom: 1px solid #e8eeeb;
+  }
+
+  .gallery-tabs button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  /* Heading */
+
+  .gallery-heading {
+    align-items: flex-start;
+
+    gap: 9px;
+
+    flex-direction: column;
+
+    margin-top: 20px;
+  }
+
+  .gallery-heading > div > span {
+    font-size: 11px;
+  }
+
+  .gallery-heading h2 {
+    font-size: 21px;
+  }
+
+
+  /* Gallery Grid */
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 9px;
+  }
+
+  .gallery-card-image img {
+    height: 150px;
+  }
+
+  .gallery-card-content {
+    padding: 8px;
+  }
+
+  .gallery-card h3 {
+    margin-bottom: 4px;
+
+    font-size: 12px;
+  }
+
+  .gallery-card p {
+    font-size: 10px;
+  }
+
+  .gallery-card-image > span {
+    right: 6px;
+    bottom: 6px;
+
+    width: 29px;
+    height: 29px;
+  }
+
+
+  /* Pagination */
+
+  .gallery-pagination {
+    min-height: 48px;
+
+    font-size: 10px;
+  }
+
+  .gallery-pagination > div {
+    gap: 7px;
+  }
+
+  .gallery-pagination button {
+    width: 25px;
+    height: 25px;
+  }
+
+
+  /* Stats */
+
+  .gallery-stats {
+    padding: 8px 0;
+  }
+
+  .gallery-stats .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-stats .gallery-container > div {
+    min-height: 52px;
+
+    padding: 5px 12px;
+
+    grid-template-columns: 28px 1fr;
+  }
+
+  .gallery-stats strong {
+    font-size: 16px;
+  }
+
+  .gallery-stats span {
+    font-size: 10px;
+  }
+
+  .gallery-stats svg {
+    width: 21px;
+    height: 21px;
+  }
+
+
+  /* CTA */
+
+  .gallery-cta {
+    padding: 10px 0 14px;
+  }
+
+  .gallery-cta > div {
+    min-height: auto;
+
+    flex-wrap: wrap;
+
+    padding: 17px;
+
+    gap: 10px;
+  }
+
+  .gallery-flask {
+    width: 40px;
+    height: 45px;
+
+    font-size: 38px;
+  }
+
+  .gallery-cta h2 {
+    font-size: 17px;
+  }
+
+  .gallery-cta p {
+    max-width: 100%;
+
+    font-size: 11px;
+  }
+
+  .gallery-cta a {
+    min-width: 120px;
+
+    margin-left: 0;
+
+    font-size: 11px;
+  }
+
+  .gallery-cta .gallery-whatsapp {
+    min-width: 135px;
+
+    margin-left: 0;
+  }
+
+
+  /* Modal */
+
+  .gallery-modal-backdrop {
+    padding: 12px;
+  }
+
+  .gallery-modal {
+    width: 100%;
+
+    height: 75vh;
+
+    border-radius: 8px;
+  }
+
+  .gallery-modal-image {
+    padding: 50px 45px 40px;
+  }
+
+  .gallery-modal-category {
+    top: 12px;
+    left: 12px;
+
+    padding: 5px 9px;
+
+    font-size: 10px;
+  }
+
+  .gallery-modal-close {
+    top: 9px;
+    right: 9px;
+
+    width: 32px;
+    height: 32px;
+
+    font-size: 21px;
+  }
+
+  .gallery-modal-prev,
+  .gallery-modal-next {
+    width: 38px;
+    height: 38px;
+  }
+
+  .gallery-modal-prev {
+    left: 8px;
+  }
+
+  .gallery-modal-next {
+    right: 8px;
+  }
+
+  .gallery-modal-counter {
+    bottom: 10px;
+
+    padding: 5px 10px;
+
+    font-size: 10px;
+  }
+}
+
+
+/* ========================================
+   VERY SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+  .gallery-grid {
+    gap: 7px;
+  }
+
+  .gallery-card-image img {
+    height: 125px;
+  }
+
+  .gallery-tabs button {
+    font-size: 8px;
+  }
+
+  .gallery-tabs button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .gallery-modal-image {
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+
+  .gallery-modal-prev,
+  .gallery-modal-next {
+    width: 34px;
+    height: 34px;
+  }
+}
