@@ -2,7 +2,7 @@
    1. ROLE MANAGEMENT PAGE
 ========================================================= */
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Activity,
@@ -79,11 +79,11 @@ function RoleManagementPage({ role = "superadmin" }) {
   const [presence, setPresenceState] = useState({});
   const [toast, setToast] = useState("");
 
-  const refresh = () => {
+  const refresh = useCallback(() => {
     setUsers(ensureSystemUsers());
     setActivities(getActivityLogs());
     setPresenceState(getPresence());
-  };
+  }, []);
 
   useEffect(() => {
     const session = getSessionUser();
@@ -114,7 +114,7 @@ function RoleManagementPage({ role = "superadmin" }) {
       window.removeEventListener("cosmochem-presence-change", onChange);
       window.removeEventListener("cosmochem-content-change", onChange);
     };
-  }, [navigate, role]);
+  }, [navigate, role, refresh]);
 
   const notify = (message) => {
     setToast(message);
