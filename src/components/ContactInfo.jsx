@@ -25,6 +25,7 @@ function ContactInfo({
   mode = "full",
 }) {
   const config = getSiteConfig();
+  const contactEmail = email || config.email;
   const item = (Icon, href, text, external = false) => (
     <a
       className="contact-info-item"
@@ -47,7 +48,7 @@ function ContactInfo({
   if (mode === "email") {
     return (
       <div className="contact-info contact-info-compact">
-        {item(Mail, "mailto:" + email, email)}
+        {item(Mail, "mailto:" + contactEmail, contactEmail)}
       </div>
     );
   }
