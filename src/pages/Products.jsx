@@ -39,7 +39,6 @@ import {
 import productsHero from "../assets/products-hero.png";
 
 
-import biosaccharideGum1 from "../assets/biosaccharide-gum-1.png";
 
 
 
