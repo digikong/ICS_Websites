@@ -22,54 +22,78 @@ function ContactInfo({
   showCompany = false,
   showPhone = true,
   email = CONTACT_INFO.email,
+  mode = "full",
 }) {
+  const item = (Icon, href, text) => (
+    <a className="contact-info-item" href={href}>
+      <Icon size={18} />
+      <span>{text}</span>
+    </a>
+  );
+
+  if (mode === "phone") {
+    return (
+      <div className="contact-info contact-info-compact">
+        {item(Phone, CONTACT_INFO.phoneHref, CONTACT_INFO.phone)}
+      </div>
+    );
+  }
+
+  if (mode === "email") {
+    return (
+      <div className="contact-info contact-info-compact">
+        {item(Mail, "mailto:" + email, email)}
+      </div>
+    );
+  }
+
+  if (mode === "whatsapp") {
+    return (
+      <div className="contact-info contact-info-compact">
+        {item(
+          MessageCircle,
+          CONTACT_INFO.whatsappUrl,
+          "Chat on WhatsApp"
+        )}
+      </div>
+    );
+  }
+
   return (
-    <div className={compact ? "contact-info contact-info-compact" : "contact-info"}>
+    <div
+      className={
+        compact
+          ? "contact-info contact-info-compact"
+          : "contact-info"
+      }
+    >
       {showCompany && (
         <strong className="contact-info-company">
           {CONTACT_INFO.company}
         </strong>
       )}
 
-      <a
-        className="contact-info-item"
-        href={CONTACT_INFO.mapsUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <MapPin size={18} />
-        <span>{CONTACT_INFO.address}</span>
-      </a>
-
-      <a
-        className="contact-info-item"
-        href={"mailto:" + email}
-      >
-        <Mail size={18} />
-        <span>{email}</span>
-      </a>
-
-      {showPhone && (
-        <a className="contact-info-item" href={CONTACT_INFO.phoneHref}>
-          <Phone size={18} />
-          <span>{CONTACT_INFO.phone}</span>
-        </a>
+      {item(
+        MapPin,
+        CONTACT_INFO.mapsUrl,
+        CONTACT_INFO.address
       )}
+
+      {item(Mail, "mailto:" + email, email)}
+
+      {showPhone &&
+        item(Phone, CONTACT_INFO.phoneHref, CONTACT_INFO.phone)}
 
       <div className="contact-info-item">
         <Clock3 size={18} />
         <span>{CONTACT_INFO.hours}</span>
       </div>
 
-      <a
-        className="contact-info-item"
-        href={CONTACT_INFO.whatsappUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <MessageCircle size={18} />
-        <span>Chat on WhatsApp</span>
-      </a>
+      {item(
+        MessageCircle,
+        CONTACT_INFO.whatsappUrl,
+        "Chat on WhatsApp"
+      )}
     </div>
   );
 }
