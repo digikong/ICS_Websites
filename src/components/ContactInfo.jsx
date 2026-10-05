@@ -98,7 +98,8 @@ function ContactInfo({
       {item(
         MessageCircle,
         CONTACT_INFO.whatsappUrl,
-        "Chat on WhatsApp"
+        "Chat on WhatsApp",
+        true
       )}
     </div>
   );
