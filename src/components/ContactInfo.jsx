@@ -7,16 +7,22 @@ import {
   Mail,
   MapPin,
   MessageCircle,
+  Phone,
 } from "lucide-react";
 
 import { CONTACT_INFO } from "../lib/cosmochemStore";
 import "./ContactInfo.css";
 
 /* =========================================================
-   1.1 CONTACT INFO DATA RENDERER
+   1.1 CONTACT INFO RENDERER
 ========================================================= */
 
-function ContactInfo({ compact = false, showCompany = false }) {
+function ContactInfo({
+  compact = false,
+  showCompany = false,
+  showPhone = true,
+  email = CONTACT_INFO.email,
+}) {
   return (
     <div className={compact ? "contact-info contact-info-compact" : "contact-info"}>
       {showCompany && (
@@ -37,11 +43,18 @@ function ContactInfo({ compact = false, showCompany = false }) {
 
       <a
         className="contact-info-item"
-        href={"mailto:" + CONTACT_INFO.email}
+        href={"mailto:" + email}
       >
         <Mail size={18} />
-        <span>{CONTACT_INFO.email}</span>
+        <span>{email}</span>
       </a>
+
+      {showPhone && (
+        <a className="contact-info-item" href={CONTACT_INFO.phoneHref}>
+          <Phone size={18} />
+          <span>{CONTACT_INFO.phone}</span>
+        </a>
+      )}
 
       <div className="contact-info-item">
         <Clock3 size={18} />
@@ -62,7 +75,3 @@ function ContactInfo({ compact = false, showCompany = false }) {
 }
 
 export default ContactInfo;
-
-/* =========================================================
-   1.2 CONTACT INFO CSS
-========================================================= */
