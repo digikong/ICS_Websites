@@ -21,7 +21,7 @@ function ContactInfo({
   compact = false,
   showCompany = false,
   showPhone = true,
-  email = config.email,
+  email,
   mode = "full",
 }) {
   const config = getSiteConfig();
@@ -87,7 +87,7 @@ function ContactInfo({
         true
       )}
 
-      {item(Mail, "mailto:" + email, email)}
+      {item(Mail, "mailto:" + contactEmail, contactEmail)}
 
       {showPhone &&
         item(Phone, config.phoneHref, config.phone)}
