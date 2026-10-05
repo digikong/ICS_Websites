@@ -1,0 +1,632 @@
+/* =========================================================
+   1. ROLE MANAGEMENT
+========================================================= */
+
+.role-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 245px 1fr;
+  background: #f7f9fb;
+  color: #18221e;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   1.1 SIDEBAR
+========================================================= */
+
+.role-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-right: 1px solid #e1e7ea;
+}
+
+.role-brand {
+  padding: 8px 10px 22px;
+  border-bottom: 1px solid #edf1f3;
+}
+
+.role-brand strong,
+.role-brand span {
+  display: block;
+}
+
+.role-brand strong {
+  color: #0a3f91;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.role-brand span {
+  margin-top: 4px;
+  color: #f27a18;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.role-nav {
+  margin-top: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.role-nav button,
+.role-logout {
+  min-height: 40px;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #53615a;
+  text-align: left;
+  font-size: 13px;
+}
+
+.role-nav button:hover,
+.role-nav button.active {
+  background: #eef5ff;
+  color: #0a3f91;
+  font-weight: 700;
+}
+
+.role-help {
+  margin-top: auto;
+  padding: 13px;
+  display: grid;
+  gap: 6px;
+  border: 1px solid #e4e9ec;
+  border-radius: 8px;
+  color: #56635c;
+  font-size: 11px;
+}
+
+.role-help svg {
+  color: #0a3f91;
+}
+
+.role-help a {
+  color: #0a3f91;
+  font-weight: 700;
+}
+
+.role-logout {
+  margin-top: 10px;
+  background: #fff4f2;
+  color: #b7463d;
+}
+
+/* =========================================================
+   2. MAIN WORKSPACE
+========================================================= */
+
+.role-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.role-header {
+  min-height: 78px;
+  padding: 15px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #e1e7ea;
+}
+
+.role-eyebrow {
+  color: #0a3f91;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.role-header h1 {
+  margin-top: 4px;
+  color: #17231e;
+  font-size: 22px;
+}
+
+.role-header-user {
+  display: grid;
+  text-align: right;
+}
+
+.role-header-user span {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.role-header-user small {
+  margin-top: 3px;
+  color: #69756f;
+  font-size: 11px;
+}
+
+/* =========================================================
+   2.1 CONTENT
+========================================================= */
+
+.role-content {
+  padding: 24px;
+  flex: 1;
+}
+
+.role-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.role-kpi {
+  padding: 18px;
+  display: grid;
+  gap: 5px;
+  border: 1px solid #e3e8eb;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.role-kpi svg {
+  color: #0a3f91;
+}
+
+.role-kpi strong {
+  font-size: 25px;
+}
+
+.role-kpi span {
+  color: #66726c;
+  font-size: 11px;
+}
+
+/* =========================================================
+   3. MANAGEMENT SECTIONS
+========================================================= */
+
+.role-actions-card,
+.manager-section {
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid #e3e8eb;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.role-actions-card h2,
+.manager-header h2 {
+  margin: 0;
+  color: #17231e;
+  font-size: 17px;
+}
+
+.role-actions-card p,
+.manager-header p {
+  margin-top: 6px;
+  color: #69756f;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   3.1 QUICK MANAGEMENT ACTIONS
+========================================================= */
+
+.role-action-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.role-action-grid button {
+  min-height: 62px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #dfe6eb;
+  border-radius: 7px;
+  background: #f9fbfc;
+  color: #33413a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.role-action-grid button:hover {
+  border-color: #8fb3e6;
+  color: #0a3f91;
+}
+
+/* =========================================================
+   4. MANAGER HEADER
+========================================================= */
+
+.manager-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.manager-header > span {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #eef5ff;
+  color: #0a3f91;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   4.1 MANAGER FORM
+========================================================= */
+
+.manager-form {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+}
+
+.manager-form input,
+.manager-form select,
+.manager-form textarea,
+.activity-filters input,
+.activity-filters select {
+  width: 100%;
+  min-height: 36px;
+  padding: 0 9px;
+  border: 1px solid #d9e2e7;
+  border-radius: 6px;
+  outline: 0;
+  background: #ffffff;
+  color: #233029;
+  font-size: 12px;
+}
+
+.manager-form textarea {
+  min-height: 76px;
+  padding: 9px;
+  grid-column: 1 / -1;
+  resize: vertical;
+}
+
+.manager-form button,
+.manager-row-actions button,
+.danger-button {
+  min-height: 36px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 6px;
+  background: #0a3f91;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.manager-form button.secondary {
+  background: #eef1f3;
+  color: #425047;
+}
+
+/* =========================================================
+   4.2 MANAGER LIST
+========================================================= */
+
+.manager-list {
+  margin-top: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.manager-row {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid #e6ebee;
+  border-radius: 7px;
+}
+
+.manager-row > div:first-child {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.manager-row strong {
+  font-size: 13px;
+}
+
+.manager-row span,
+.manager-row small {
+  color: #68746e;
+  font-size: 11px;
+}
+
+.manager-row small {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.manager-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.manager-row-actions button {
+  min-height: 30px;
+  padding: 0 9px;
+  background: #eef5ff;
+  color: #0a3f91;
+}
+
+.manager-row-actions button.danger,
+.danger-button {
+  background: #fff1ef;
+  color: #b7463d;
+}
+
+.manager-row-actions em {
+  padding: 5px 7px;
+  border-radius: 999px;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.manager-row-actions em.online {
+  background: #eaf8ef;
+  color: #21824b;
+}
+
+.manager-row-actions em.offline {
+  background: #f0f2f3;
+  color: #68746e;
+}
+
+/* =========================================================
+   5. ACTIVITY TRACKING
+========================================================= */
+
+.activity-filters {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 9px;
+}
+
+.presence-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+}
+
+.presence-card {
+  padding: 11px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e6ebee;
+  border-radius: 7px;
+}
+
+.presence-card > div {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.presence-card strong {
+  font-size: 11px;
+}
+
+.presence-card span {
+  color: #6a766f;
+  font-size: 10px;
+}
+
+.presence-card em {
+  margin-left: auto;
+  color: #69756f;
+  font-size: 10px;
+  font-style: normal;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #98a19c;
+}
+
+.status-dot.online {
+  background: #2cac59;
+}
+
+/* =========================================================
+   5.1 ACTIVITY TABLE
+========================================================= */
+
+.activity-table-wrap {
+  margin-top: 14px;
+  overflow-x: auto;
+  border: 1px solid #e6ebee;
+  border-radius: 7px;
+}
+
+.activity-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+.activity-table th,
+.activity-table td {
+  padding: 10px;
+  border-bottom: 1px solid #edf1f3;
+  text-align: left;
+  font-size: 11px;
+}
+
+.activity-table th {
+  background: #f8fafb;
+  color: #47544d;
+}
+
+.activity-table td {
+  color: #5f6b65;
+}
+
+/* =========================================================
+   5.2 ARCHIVE NOTE
+========================================================= */
+
+.archive-note {
+  margin-top: 12px;
+  padding: 9px 11px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 6px;
+  background: #f7f8f9;
+  color: #68746e;
+  font-size: 11px;
+}
+
+.manager-empty {
+  padding: 18px;
+  text-align: center;
+  color: #7b8580;
+  font-size: 12px;
+}
+
+/* =========================================================
+   6. FOOTER + TOAST
+========================================================= */
+
+.role-footer {
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid #e1e7ea;
+  background: #ffffff;
+  color: #7a857f;
+  font-size: 10px;
+}
+
+.role-toast {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 300;
+  padding: 11px 14px;
+  border-radius: 7px;
+  background: #0a3f91;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   7. RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .role-page {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .role-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .role-action-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .manager-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .presence-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .role-page {
+    grid-template-columns: 1fr;
+  }
+
+  .role-sidebar {
+    position: static;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid #e1e7ea;
+  }
+
+  .role-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .role-help {
+    margin-top: 14px;
+  }
+
+  .role-header {
+    gap: 10px;
+  }
+
+  .role-header-user {
+    display: none;
+  }
+
+  .role-content {
+    padding: 15px;
+  }
+
+  .role-kpis,
+  .role-action-grid,
+  .manager-form,
+  .activity-filters,
+  .presence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manager-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .manager-row-actions {
+    flex-wrap: wrap;
+  }
+
+  .role-footer {
+    flex-direction: column;
+  }
+}
