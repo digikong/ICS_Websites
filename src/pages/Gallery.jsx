@@ -429,7 +429,7 @@ function Gallery() {
             Get a Quote <ArrowRight size={15} />
           </a>
 
-          <ContactInfo compact />
+          <ContactInfo compact mode="whatsapp" />
 
 
         </div>
