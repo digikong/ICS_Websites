@@ -8,7 +8,6 @@ import {
   FlaskConical,
   Mail,
   MessageCircle,
-  Phone,
   RotateCcw,
   Send,
   ShieldCheck,
