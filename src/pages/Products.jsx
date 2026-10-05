@@ -120,7 +120,7 @@ function Products() {
     ["Sodium Hyaluronate", Droplet, "sodium-hyaluronate"],
   ];
 
-  export const PRODUCT_SEED = [
+  const PRODUCT_SEED = [
     {
       name: "Alpha Arbutin",
       slug: "alpha-arbutin",
@@ -375,6 +375,8 @@ function Products() {
 },
 
   ];
+
+  export { PRODUCT_SEED };
 
   const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [products, setProducts] = useState(() => getProducts(PRODUCT_SEED));
