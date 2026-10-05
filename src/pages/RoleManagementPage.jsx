@@ -743,7 +743,7 @@ function SiteConfigManager({ notify }) {
     event.preventDefault();
     const nextConfig = {
       ...form,
-      phoneHref: "tel:" + String(form.phone || "").replace(/\\D/g, ""),
+      phoneHref: "tel:" + String(form.phone || "").replace(/\D/g, ""),
     };
     saveSiteConfig(nextConfig);
     logActivity("Update Site Settings", "Company, contact and branding settings");
@@ -775,7 +775,7 @@ function SiteConfigManager({ notify }) {
 }
 
 /* =========================================================
-   8. ENQUIRY MANAGER
+   8.1 ENQUIRY MANAGER
 ========================================================= */
 
 function EnquiryManager({ notify }) {
@@ -862,7 +862,7 @@ function EnquiryManager({ notify }) {
 }
 
 /* =========================================================
-   8. ACTIVITY MANAGER
+   9. ACTIVITY MANAGER
 ========================================================= */
 
 function ActivityManager({ activities, presence, refresh, notify }) {
