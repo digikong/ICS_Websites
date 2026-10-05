@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   ArrowRight,
   CheckCircle2,
-  Clock3,
   Headphones,
   Send,
   ShieldCheck,
