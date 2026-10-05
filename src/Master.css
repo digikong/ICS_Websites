@@ -109,64 +109,43 @@ a {
  
 
  
-/* ========================= 
-   LOGO 
-========================= */ 
- 
-.brand { 
-  display: flex !important; 
-  align-items: center !important; 
-  justify-content: flex-start !important; 
- 
-  width: 320px !important; 
-  min-width: 320px !important; 
-  max-width: none !important; 
- 
-  height: auto !important; 
-  flex-shrink: 0 !important; 
-} 
- 
-.brand img {
-  width: 320px !important;
-  height: 80px !important;
-  max-width: none !important;
-  max-height: none !important;
-  object-fit: contain !important;
+/* =========================================================
+   2.1 NAVBAR BRANDING
+========================================================= */
+
+.brand {
+  width: 360px !important;
+  min-width: 360px !important;
+  max-width: 360px !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  flex-shrink: 0 !important;
 }
- 
-.brand-legal { 
-  margin-left: 7px; 
-  color: #164b99; 
-  font-size: 9px; 
-  font-weight: 800; 
-  white-space: nowrap; 
-} 
- 
-.brand-info strong { 
-  display: block; 
- 
-  font-size: 24px; 
- 
-  line-height: 1; 
- 
-  color: #103e91; 
- 
-  font-weight: 800; 
-} 
- 
-.brand-info span { 
-  display: block; 
- 
-  margin-top: 5px; 
- 
-  color: #164b99; 
- 
-  font-size: 8px; 
- 
-  font-weight: 700; 
-} 
- 
- 
+
+.brand-company {
+  display: block;
+  color: #0a3f91;
+  font-size: 20px;
+  line-height: 1.05;
+  font-weight: 800;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.brand-tagline {
+  display: block;
+  color: #f27a18;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
+}
+
 /* NAV */ 
  
 .nav-menu { 
@@ -1759,108 +1738,18 @@ a {
     gap: 13px; 
   } 
  
-  .brand { 
-    min-width: 210px; 
-  } 
- 
-  .brand-info strong { 
-    font-size: 21px; 
-  } 
- 
-  .category-grid { 
-    grid-template-columns: 
-      repeat(3, 1fr); 
-  } 
- 
-  .industry-grid { 
-    grid-template-columns: 
-      repeat(4, 1fr); 
-  } 
- 
-  .industry-item:nth-child(4) { 
-    border-right: 0; 
-  } 
- 
-  .why-box { 
-    grid-template-columns: 
-      repeat(3, 1fr); 
-  } 
- 
-  .why-item:nth-child(3) { 
-    border-right: 0; 
-  } 
- 
-  .why-item:nth-child(4), 
-  .why-item:nth-child(5) { 
-    border-top: 1px solid #e0e6e3; 
-  } 
- 
-  
- 
- 
-  .footer-main { 
-    grid-template-columns: 
-      repeat(3, 1fr); 
- 
-    row-gap: 25px; 
-  } 
- 
-} 
- 
- 
-/* ========================================================= 
-   MOBILE 
-========================================================= */ 
- 
-@media (max-width: 760px) { 
- 
-  .site-container { 
-    width: calc(100% - 30px); 
- 
-    margin-left: 15px; 
-    margin-right: 15px; 
-  } 
-   .hero-content {
-    width: 100%;
-    padding: 20px;
-    transform: translateY(0);
-
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.72),
-      rgba(255, 255, 255, 0.25),
-      rgba(255, 255, 255, 0)
-    );
-
-    border-radius: 0;
+  .brand {
+    width: 290px !important;
+    min-width: 290px !important;
+    max-width: 290px !important;
   }
- 
- 
- 
-  /* NAV */ 
- 
-  .navbar { 
-    height: 70px; 
-  } 
- 
-  .brand { 
-    min-width: 0; 
- 
-    flex: 1; 
-  } 
- 
-  .brand img { 
-    width: auto; 
-    max-width: 205px; 
-    height: 48px; 
-  } 
- 
-  .brand-info strong { 
-    font-size: 20px; 
-  } 
- 
-  .brand-info span { 
-    font-size: 6px; 
+
+  .brand-company {
+    font-size: 17px;
+  }
+
+  .brand-tagline {
+    font-size: 8px;
   } 
  
   .navbar-actions .login-btn, 
