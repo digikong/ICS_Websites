@@ -234,7 +234,10 @@ export const clearPresence = (email) => {
   if (!email) return;
 
   const presence = readJson(PRESENCE_KEY, {});
-  delete presence[email];
+  if (presence[email]) {
+    presence[email].status = "offline";
+    presence[email].updatedAt = new Date().toISOString();
+  }
   writeJson(PRESENCE_KEY, presence);
   window.dispatchEvent(new Event("cosmochem-presence-change"));
 };
