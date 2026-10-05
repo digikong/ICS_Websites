@@ -24,8 +24,12 @@ function ContactInfo({
   email = CONTACT_INFO.email,
   mode = "full",
 }) {
-  const item = (Icon, href, text) => (
-    <a className="contact-info-item" href={href}>
+  const item = (Icon, href, text, external = false) => (
+    <a
+      className="contact-info-item"
+      href={href}
+      {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+    >
       <Icon size={18} />
       <span>{text}</span>
     </a>
@@ -53,7 +57,8 @@ function ContactInfo({
         {item(
           MessageCircle,
           CONTACT_INFO.whatsappUrl,
-          "Chat on WhatsApp"
+          "Chat on WhatsApp",
+          true
         )}
       </div>
     );
@@ -76,7 +81,8 @@ function ContactInfo({
       {item(
         MapPin,
         CONTACT_INFO.mapsUrl,
-        CONTACT_INFO.address
+        CONTACT_INFO.address,
+        true
       )}
 
       {item(Mail, "mailto:" + email, email)}
