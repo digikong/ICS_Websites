@@ -13,6 +13,8 @@ export const CONTACT_INFO = {
   company: "InnoVision CosmoChem Solutions Pvt. Ltd.",
   address: "D-124 Noida-sector:07, UP-201302",
   email: "sales@innovisioncosmochem.com",
+  phone: "+91 9876543210",
+  phoneHref: "tel:+919876543210",
   hours: "Mon - Fri, 9:30 AM - 6:30 PM",
   whatsapp: "+91 9876543210",
   whatsappUrl: "https://wa.me/919876543210",
