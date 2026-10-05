@@ -92,6 +92,11 @@ function RoleManagementPage({ role = "superadmin" }) {
     }
 
     refresh();
+    setPresence("online");
+    const heartbeat = window.setInterval(() => setPresence("online"), 30000);
+    const offline = () => setPresence("offline");
+
+    window.addEventListener("beforeunload", offline);
 
     const onChange = () => refresh();
     window.addEventListener("cosmochem-activity-change", onChange);
@@ -100,6 +105,8 @@ function RoleManagementPage({ role = "superadmin" }) {
     window.addEventListener("cosmochem-content-change", onChange);
 
     return () => {
+      window.clearInterval(heartbeat);
+      window.removeEventListener("beforeunload", offline);
       window.removeEventListener("cosmochem-activity-change", onChange);
       window.removeEventListener("cosmochem-users-change", onChange);
       window.removeEventListener("cosmochem-presence-change", onChange);
