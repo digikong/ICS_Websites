@@ -10,7 +10,7 @@ import {
   Phone,
 } from "lucide-react";
 
-import { CONTACT_INFO } from "../lib/cosmochemStore";
+import { getSiteConfig } from "../lib/cosmochemStore";
 import "./ContactInfo.css";
 
 /* =========================================================
@@ -21,9 +21,10 @@ function ContactInfo({
   compact = false,
   showCompany = false,
   showPhone = true,
-  email = CONTACT_INFO.email,
+  email = config.email,
   mode = "full",
 }) {
+  const config = getSiteConfig();
   const item = (Icon, href, text, external = false) => (
     <a
       className="contact-info-item"
@@ -38,7 +39,7 @@ function ContactInfo({
   if (mode === "phone") {
     return (
       <div className="contact-info contact-info-compact">
-        {item(Phone, CONTACT_INFO.phoneHref, CONTACT_INFO.phone)}
+        {item(Phone, config.phoneHref, config.phone)}
       </div>
     );
   }
@@ -56,7 +57,7 @@ function ContactInfo({
       <div className="contact-info contact-info-compact">
         {item(
           MessageCircle,
-          CONTACT_INFO.whatsappUrl,
+          config.whatsappUrl,
           "Chat on WhatsApp",
           true
         )}
@@ -74,30 +75,30 @@ function ContactInfo({
     >
       {showCompany && (
         <strong className="contact-info-company">
-          {CONTACT_INFO.company}
+          {config.company}
         </strong>
       )}
 
       {item(
         MapPin,
-        CONTACT_INFO.mapsUrl,
-        CONTACT_INFO.address,
+        config.mapsUrl,
+        config.address,
         true
       )}
 
       {item(Mail, "mailto:" + email, email)}
 
       {showPhone &&
-        item(Phone, CONTACT_INFO.phoneHref, CONTACT_INFO.phone)}
+        item(Phone, config.phoneHref, config.phone)}
 
       <div className="contact-info-item">
         <Clock3 size={18} />
-        <span>{CONTACT_INFO.hours}</span>
+        <span>{config.hours}</span>
       </div>
 
       {item(
         MessageCircle,
-        CONTACT_INFO.whatsappUrl,
+        config.whatsappUrl,
         "Chat on WhatsApp",
         true
       )}
