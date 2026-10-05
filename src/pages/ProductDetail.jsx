@@ -478,10 +478,11 @@ function ProductDetail() {
 
   const { slug } = useParams();
   const storedProducts = getProducts(PRODUCT_SEED);
-  const product =
-    storedProducts.find((item) => item.slug === slug) ||
-    productData[slug] ||
-    productData["alpha-arbutin"];
+  const storedProduct = storedProducts.find((item) => item.slug === slug);
+  const product = {
+    ...(productData[slug] || productData["alpha-arbutin"]),
+    ...(storedProduct || {}),
+  };
 
   const [activeTab, setActiveTab] = useState("Description");
   const [activeImage, setActiveImage] = useState(product.image);
