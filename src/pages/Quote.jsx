@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 
 import QuoteImg from "../assets/Quote.png";
+import ContactInfo from "../components/ContactInfo";
 import "./Quote.css";
 
 const steps = [
@@ -419,25 +420,7 @@ function Quote() {
 
           <section className="quote-contact">
             <h2>Quick Contact</h2>
-
-            {/* <a href="tel:+916395468419">
-              <Phone size={20} />
-              +91 63954 68419
-            </a> */}
-
-            {/* <a href="mailto:sales@innovisioncosmochem.com">
-              <Mail size={20} />
-              sales@innovisioncosmochem.com
-            </a> */}
-
-            <a
-              href="https://wa.me/916395468419"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <MessageCircle size={20} />
-              Chat on WhatsApp
-            </a>
+            <ContactInfo compact />
           </section>
         </aside>
       </section>
