@@ -11,6 +11,7 @@ export const ROLE_PERMISSIONS = {
 
 export const CONTACT_INFO = {
   company: "InnoVision CosmoChem Solutions Pvt. Ltd.",
+  tagline: "Enriching Lives With Innovative Chemistry",
   address: "D-124 Noida-sector:07, UP-201302",
   email: "sales@innovisioncosmochem.com",
   phone: "+91 9876543210",
@@ -30,6 +31,7 @@ const SESSION_KEY = "cosmochem-current-user";
 const LOGS_KEY = "cosmochem-activity-logs";
 const ARCHIVE_KEY = "cosmochem-activity-archive";
 const PRESENCE_KEY = "cosmochem-presence";
+const SITE_CONFIG_KEY = "cosmochem-site-config";
 const PRODUCTS_KEY = "cosmochem-products";
 const CAREERS_KEY = "cosmochem-careers";
 const GALLERY_KEY = "cosmochem-gallery";
@@ -105,8 +107,24 @@ export const clearSessionUser = () => {
 };
 
 /* =========================================================
-   1.3 DYNAMIC CONTENT COLLECTIONS
+   1.3 SITE CONFIGURATION
 ========================================================= */
+
+export const getSiteConfig = () => ({
+  ...CONTACT_INFO,
+  ...readJson(SITE_CONFIG_KEY, {}),
+});
+
+export const saveSiteConfig = (config) => {
+  writeJson(SITE_CONFIG_KEY, config);
+  window.dispatchEvent(new Event("cosmochem-site-config-change"));
+};
+
+/* =========================================================
+   1.4 DYNAMIC CONTENT COLLECTIONS
+========================================================= */
+
+
 
 export const getCollection = (key, fallback = []) =>
   getJsonCollection(key, fallback);
@@ -132,7 +150,7 @@ export const getEnquiries = (fallback = []) => getCollection(ENQUIRIES_KEY, fall
 export const saveEnquiries = (items) => saveCollection(ENQUIRIES_KEY, items);
 
 /* =========================================================
-   1.4 ACTIVITY LOGGING + 10-DAY ARCHIVE
+   1.5 ACTIVITY LOGGING + 10-DAY ARCHIVE
 ========================================================= */
 
 export const normalizeLogs = () => {
@@ -188,7 +206,7 @@ export const clearActivityLogs = () => {
 };
 
 /* =========================================================
-   1.5 ONLINE / OFFLINE PRESENCE
+   1.6 ONLINE / OFFLINE PRESENCE
 ========================================================= */
 
 export const setPresence = (status = "online") => {
