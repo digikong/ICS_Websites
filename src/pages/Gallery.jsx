@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
   Camera,
@@ -25,12 +25,13 @@ import facilities2 from "../assets/laboratory.png";
 import events2 from "../assets/exhibition.png";
 
 import "./Gallery.css";
+import { getGallery } from "../lib/cosmochemStore";
 
 /* ========================================
    GALLERY DATA
 ======================================== */
 
-const galleryItems = [
+export const GALLERY_SEED = [
   {
     category: "Facilities",
     images: [facilities, facilities2],
@@ -65,11 +66,6 @@ const galleryItems = [
    CATEGORIES
 ======================================== */
 
-const categories = [
-  "All",
-  ...galleryItems.map((item) => item.category),
-];
-
 /* ========================================
    CATEGORY ICONS
 ======================================== */
@@ -86,11 +82,24 @@ const categoryIcons = {
 };
 
 function Gallery() {
+  const [galleryItems, setGalleryItems] = useState(() => getGallery(GALLERY_SEED));
   const [activeCategory, setActiveCategory] = useState("All");
   const [page, setPage] = useState(1);
 
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const categories = useMemo(
+    () => ["All", ...galleryItems.map((item) => item.category)],
+    [galleryItems]
+  );
+
+  useEffect(() => {
+    const refreshGallery = () => setGalleryItems(getGallery(GALLERY_SEED));
+    refreshGallery();
+    window.addEventListener("cosmochem-content-change", refreshGallery);
+    return () => window.removeEventListener("cosmochem-content-change", refreshGallery);
+  }, []);
 
   const pageSize = 12;
 
