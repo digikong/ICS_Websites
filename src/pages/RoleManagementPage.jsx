@@ -35,11 +35,13 @@ import {
   getPresence,
   getProducts,
   getSessionUser,
+  getSiteConfig,
   getUsers,
   logActivity,
   saveCareers,
   saveGallery,
   saveProducts,
+  saveSiteConfig,
   saveUsers,
   clearSessionUser,
 } from "../lib/cosmochemStore";
@@ -52,7 +54,7 @@ import "./RoleManagementPage.css";
 const ROLE_CONFIG = {
   superadmin: {
     label: "Superadmin",
-    tabs: ["Dashboard", "Products", "Careers", "Gallery", "Enquiries", "Users", "Activities"],
+    tabs: ["Dashboard", "Products", "Careers", "Gallery", "Enquiries", "Users", "Activities", "Settings"],
   },
   admin: {
     label: "Admin",
@@ -226,6 +228,10 @@ function RoleManagementPage({ role = "superadmin" }) {
               refresh={refresh}
               notify={notify}
             />
+          )}
+
+          {activeTab === "Settings" && role === "superadmin" && (
+            <SiteConfigManager notify={notify} />
           )}
 
           {activeTab === "Activities" && role === "superadmin" && (
@@ -719,6 +725,47 @@ function UserManager({ users, refresh, notify }) {
           </article>
         ))}
       </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   8. SITE SETTINGS MANAGER
+========================================================= */
+
+function SiteConfigManager({ notify }) {
+  const [form, setForm] = useState(() => getSiteConfig());
+
+  const update = (field, value) =>
+    setForm((current) => ({ ...current, [field]: value }));
+
+  const save = (event) => {
+    event.preventDefault();
+    saveSiteConfig(form);
+    logActivity("Update Site Settings", "Company, contact and branding settings");
+    notify("Site settings saved.");
+  };
+
+  return (
+    <section className="manager-section">
+      <div className="manager-header">
+        <div>
+          <h2>Site Settings</h2>
+          <p>Update the common branding and contact details used across the website.</p>
+        </div>
+      </div>
+
+      <form className="manager-form" onSubmit={save}>
+        <input value={form.company} onChange={(e) => update("company", e.target.value)} placeholder="Company name" />
+        <input value={form.tagline} onChange={(e) => update("tagline", e.target.value)} placeholder="Tagline" />
+        <input value={form.email} onChange={(e) => update("email", e.target.value)} placeholder="Sales email" />
+        <input value={form.phone} onChange={(e) => update("phone", e.target.value)} placeholder="Phone" />
+        <input value={form.hours} onChange={(e) => update("hours", e.target.value)} placeholder="Working hours" />
+        <input value={form.whatsappUrl} onChange={(e) => update("whatsappUrl", e.target.value)} placeholder="WhatsApp URL" />
+        <input value={form.mapsUrl} onChange={(e) => update("mapsUrl", e.target.value)} placeholder="Google Maps URL" />
+        <input value={form.address} onChange={(e) => update("address", e.target.value)} placeholder="Business address" />
+        <button type="submit"><Save size={15} />Save Settings</button>
+      </form>
     </section>
   );
 }
