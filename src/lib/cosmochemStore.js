@@ -3,7 +3,7 @@
 ========================================================= */
 
 export const ROLE_PERMISSIONS = {
-  superadmin: ["dashboard", "products", "careers", "gallery", "users", "activities", "settings"],
+  superadmin: ["dashboard", "products", "careers", "gallery", "enquiries", "users", "activities", "settings"],
   admin: ["products"],
   accountant: ["careers", "gallery"],
   customer: ["account"],
