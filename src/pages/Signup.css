@@ -257,19 +257,6 @@
   font-weight: 700;
 }
 
-.signup-or {
-  width: 29px;
-  height: 29px;
-  align-self: center;
-  margin-left: -47px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #f0f7f3;
-  font-size: 15px;
-  font-weight: 700;
-}
-
 /* Signup Benefits */
 
 .signup-benefits-side ul {
@@ -440,10 +427,6 @@
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px;
-  }
-
-  .signup-or {
-    display: none;
   }
 
   .signup-benefits-side {
