@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 
 import {
@@ -69,6 +69,7 @@ import vegetableSqualane from "../assets/vegetable-squalane.png";
 
 
 import "./Products.css";
+import { getProducts } from "../lib/cosmochemStore";
 
 function Products() {
   const [searchParams] = useSearchParams();
@@ -119,7 +120,7 @@ function Products() {
     ["Sodium Hyaluronate", Droplet, "sodium-hyaluronate"],
   ];
 
-  const products = [
+  export const PRODUCT_SEED = [
     {
       name: "Alpha Arbutin",
       slug: "alpha-arbutin",
@@ -376,6 +377,14 @@ function Products() {
   ];
 
   const [activeCategory, setActiveCategory] = useState(initialCategory);
+  const [products, setProducts] = useState(() => getProducts(PRODUCT_SEED));
+
+  useEffect(() => {
+    const refreshProducts = () => setProducts(getProducts(PRODUCT_SEED));
+    refreshProducts();
+    window.addEventListener("cosmochem-content-change", refreshProducts);
+    return () => window.removeEventListener("cosmochem-content-change", refreshProducts);
+  }, []);
   const [searchTerm, setSearchTerm] = useState("");
   const [casNumber, setCasNumber] = useState("");
   const [grade, setGrade] = useState("All Grades");
