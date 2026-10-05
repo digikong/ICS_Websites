@@ -11,7 +11,7 @@ import {
   X,
 } from "lucide-react";
 
-import { getSessionUser } from "../lib/cosmochemStore";
+import { getSessionUser, getSiteConfig } from "../lib/cosmochemStore";
 
 /* =========================================================
    1.1 INDUSTRY NAVIGATION
@@ -31,16 +31,20 @@ const industryCategories = [
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState(() => getSessionUser());
+  const [siteConfig, setSiteConfig] = useState(() => getSiteConfig());
 
   useEffect(() => {
     const refreshUser = () => setCurrentUser(getSessionUser());
+    const refreshSite = () => setSiteConfig(getSiteConfig());
 
     window.addEventListener("cosmochem-auth-change", refreshUser);
     window.addEventListener("storage", refreshUser);
+    window.addEventListener("cosmochem-site-config-change", refreshSite);
 
     return () => {
       window.removeEventListener("cosmochem-auth-change", refreshUser);
       window.removeEventListener("storage", refreshUser);
+      window.removeEventListener("cosmochem-site-config-change", refreshSite);
     };
   }, []);
 
@@ -67,10 +71,10 @@ function Navbar() {
 
         <NavLink to="/" className="brand" onClick={closeMenu}>
           <strong className="brand-company">
-            InnoVision CosmoChem Solutions Pvt. Ltd.
+            {siteConfig.company}
           </strong>
           <span className="brand-tagline">
-            Enriching Lives With Innovative Chemistry
+            {siteConfig.tagline}
           </span>
         </NavLink>
 
