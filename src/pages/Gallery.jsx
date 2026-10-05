@@ -25,6 +25,7 @@ import facilities2 from "../assets/laboratory.png";
 import events2 from "../assets/exhibition.png";
 
 import "./Gallery.css";
+import ContactInfo from "../components/ContactInfo";
 import { getGallery } from "../lib/cosmochemStore";
 
 /* ========================================
@@ -428,14 +429,9 @@ function Gallery() {
             Get a Quote <ArrowRight size={15} />
           </a>
 
-          <a
-            className="gallery-whatsapp"
-            href="https://wa.me/919876543210"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Chat on WhatsApp
-          </a>
+          <ContactInfo compact />
+
+
         </div>
       </section>
 
