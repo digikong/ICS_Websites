@@ -2,6 +2,7 @@
    1. CONTACT INFO COMPONENT
 ========================================================= */
 
+import { useEffect, useState } from "react";
 import {
   Clock3,
   Mail,
@@ -24,7 +25,13 @@ function ContactInfo({
   email,
   mode = "full",
 }) {
-  const config = getSiteConfig();
+  const [config, setConfig] = useState(() => getSiteConfig());
+
+  useEffect(() => {
+    const refreshConfig = () => setConfig(getSiteConfig());
+    window.addEventListener("cosmochem-site-config-change", refreshConfig);
+    return () => window.removeEventListener("cosmochem-site-config-change", refreshConfig);
+  }, []);
   const contactEmail = email || config.email;
   const item = (Icon, href, text, external = false) => (
     <a
