@@ -4,8 +4,6 @@ import {
   CheckCircle2,
   Clock3,
   Headphones,
-  Mail,
-  MapPin,
   MessageCircle,
   Phone,
   Send,
@@ -16,25 +14,8 @@ import {
 } from "lucide-react";
 
 import ContactImg from "../assets/Contact.png";
+import ContactInfo from "../components/ContactInfo";
 import "./Contact.css";
-
-const contactDetails = [
-  [
-    MapPin,
-    "Address",
-    "D-124 Noida-sector:07, UP-201302",
-  ],
-  [
-    Mail,
-    "Email",
-    "sales@innovisioncosmochem.com",
-  ],
-  [
-    Clock3,
-    "Working Hours",
-    "Mon - Fri: 9:30 AM - 6:30 PM\nSaturday and Sunday: Closed",
-  ],
-];
 
 const benefits = [
   [
@@ -250,21 +231,7 @@ function Contact() {
             </h2>
           </div>
 
-          <div className="contact-details">
-            {contactDetails.map(([Icon, title, text]) => (
-              <div className="contact-detail" key={title}>
-                <Icon size={21} />
-
-                <span>
-                  <strong>{title}</strong>
-
-                  {text.split("\n").map((line) => (
-                    <small key={line}>{line}</small>
-                  ))}
-                </span>
-              </div>
-            ))}
-          </div>
+          <ContactInfo showCompany />
 
           <div className="contact-follow">
             <strong>Follow Us</strong>
