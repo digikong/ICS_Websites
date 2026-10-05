@@ -321,7 +321,9 @@ function Login() {
           </span>
         </div>
 
-        <ContactInfo compact showCompany />
+        <ContactInfo compact mode="phone" />
+
+        <ContactInfo compact mode="whatsapp" />
       </section>
 
       {forgot && (
