@@ -245,38 +245,13 @@ function Contact() {
           </div>
         </div>
 
-        {/* Quick Contact Cards */}
+        {/* Quick Contact */}
         <aside className="contact-quick-stack">
           <div className="quick-call">
             <h2>Quick Contact</h2>
-
-            <p>Need immediate assistance?</p>
-
-            <a href="tel:+919876543210">
-              <Phone size={15} />
-              Call Now
-            </a>
-          </div>
-
-          <div className="quick-whatsapp">
-            <MessageCircle size={30} />
-
-            <h2>
-              Chat on
-              <br />
-              <span>WhatsApp</span>
-            </h2>
-
-            <p>Get quick answers to your queries.</p>
-
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Chat Now
-              <ArrowRight size={14} />
-            </a>
+            <p>Reach our team directly from the contact details below.</p>
+            <ContactInfo compact mode="phone" />
+            <ContactInfo compact mode="whatsapp" />
           </div>
         </aside>
       </section>
