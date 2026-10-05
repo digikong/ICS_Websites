@@ -428,7 +428,7 @@ function Careers() {
                 individuals. Share your CV with us at
               </p>
 
-              <ContactInfo compact email="account@innovisioncosmochem.com" />
+              <ContactInfo compact mode="email" email="account@innovisioncosmochem.com" />
 
               <div className="careers-cv-send">
                 <Send size={38} />
