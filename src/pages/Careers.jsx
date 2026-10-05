@@ -20,6 +20,7 @@ import SunlitImage from "../assets/Sunlit.png";
 import LeafImage from "../assets/Leaf.png";
 
 import "./Careers.css";
+import ContactInfo from "../components/ContactInfo";
 
 
 /* =========================================================
@@ -427,29 +428,7 @@ function Careers() {
                 individuals. Share your CV with us at
               </p>
 
-              <a
-                    className="careers-email"
-                    href={`mailto:account@innovisioncosmochem.com?subject=${encodeURIComponent(
-                      "Career Enquiry - CosmoChem",
-                    )}&body=${encodeURIComponent(
-                      `Dear Hiring Team,
-
-                  I would like to enquire about career opportunities at CosmoChem.
-
-                  I am interested in exploring suitable opportunities with your organisation. Please let me know if there are any current or upcoming positions matching my profile.
-
-                  I have attached my CV for your reference and would be grateful if you could consider my profile for suitable opportunities.
-
-                  Thank you for your time.
-
-                  Regards,
-                  [Your Name]
-                  [Your Phone Number]
-                  [Your Email Address]`,
-                    )}`}
-                  >
-                    account@innovisioncosmochem.com
-                  </a>
+              <ContactInfo compact email="account@innovisioncosmochem.com" />
 
               <div className="careers-cv-send">
                 <Send size={38} />
