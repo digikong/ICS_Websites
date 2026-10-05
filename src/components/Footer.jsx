@@ -1,14 +1,7 @@
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  Send,
-} from "lucide-react";
-
-// import logo from "../assets/logo.png";
+import { Send } from "lucide-react";
 
 import { useState } from "react";
+import ContactInfo from "./ContactInfo";
 
 
 function Footer() {
@@ -113,68 +106,13 @@ function Footer() {
          
         </div>
 
-        {/* CONTACT INFORMATION */}
+        {/* =================================================
+        CONTACT INFORMATION
+    ================================================= */}
 
-    <div className="footer-column contact-column">
-  <h4>CONTACT INFORMATION</h4>
-
-  {/* Address */}
-  <div className="footer-contact-item">
-    <a
-      href="https://maps.app.goo.gl/segzWVpxiCkwPWxK7"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Open address in Google Maps"
-    >
-      <MapPin size={25} />
-    </a>
-
-    <a
-      href="https://maps.app.goo.gl/segzWVpxiCkwPWxK7"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="footer-contact-link"
-    >
-      <span>
-        D-124 Noida-sector:07,
-        <br />
-        UP-201302
-      </span>
-    </a>
-  </div>
-
-  {/* Email */}
-  <div className="footer-contact-item">
-    <a
-      href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@innovisioncosmochem.com&su=Chemical%20Product%20Enquiry&body=Hello%20CosmoChem%20Team%2C%0A%0AI%20would%20like%20to%20know%20more%20about%20your%20chemical%20products.%0A%0AThank%20you.%20Regards"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Send email to CosmoChem"
-    >
-      <Mail size={25} />
-    </a>
-
-    <a
-      href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@innovisioncosmochem.com&su=Chemical%20Product%20Enquiry&body=Hello%20CosmoChem%20Team%2C%0A%0AI%20would%20like%20to%20know%20more%20about%20your%20chemical%20products.%0A%0AThank%20you.%20Regards"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="footer-contact-link"
-    >
-      <span>
-        sales@innovisioncosmochem.com
-      </span>
-    </a>
-  </div>
-
-          <div className="footer-contact-item">
-            <Clock size={25} />
-
-            <span>
-              Mon - Fri
-              <br />
-              9:30 AM - 6:30 PM
-            </span>
-          </div>
+        <div className="footer-column contact-column">
+          <h4>CONTACT INFORMATION</h4>
+          <ContactInfo compact />
         </div>
 
         {/* NEWSLETTER */}
