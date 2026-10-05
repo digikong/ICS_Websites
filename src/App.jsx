@@ -136,14 +136,10 @@ function App() {
 
           <Route path="/signup" element={<Signup />} />
 
-          {/* ================= ADMIN ================= */}
-          <Route
-            path="/admin"
-            element={<AdminDashboard />}
-          />
-
-
-          <Route path="/quote" element={<Quote />} />
+          {/* ================= ROLE MANAGEMENT ================= */}
+          <Route path="/superadmin" element={<SuperadminPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/accountant" element={<AccountantPage />} />
         </Routes>
 
 
