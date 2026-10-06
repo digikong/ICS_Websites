@@ -20,6 +20,7 @@ import {
 
 
 import { useNavigate } from "react-router-dom";
+import ContactActions from "../components/ContactActions";
 
 
 import flask from "../assets/flask.png";
@@ -312,38 +313,9 @@ function IndustriesPage() {
         </div>
       </section>
 
-      <section className="industry-page-cta">
-        <div className="industries-page-container">
-          <FlaskConical size={64} />
+      <ContactActions />
 
-          <div>
-            <h2>
-              Industry-specific chemical solutions
-              <br />
-              <span>that drive your success.</span>
-            </h2>
 
-            <p>
-              Let&apos;s connect and find the right chemicals for your
-              business.
-            </p>
-          </div>
-
-          <a href="#contact">
-            Get a Quote <ArrowRight size={16} />
-          </a>
-
-          <a
-            className="industry-whatsapp"
-            href="https://wa.me/919876543210"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <MessageCircle size={17} />
-            Chat on WhatsApp
-          </a>
-        </div>
-      </section>
 
       
     </main>
