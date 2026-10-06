@@ -1,0 +1,106 @@
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes: [redis_data:/data]
+    networks: [cosmochem]
+
+  kafka:
+    image: bitnami/kafka:3.9
+    restart: unless-stopped
+    environment:
+      KAFKA_CFG_NODE_ID: 1
+      KAFKA_CFG_PROCESS_ROLES: broker,controller
+      KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_CFG_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_CFG_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    volumes: [kafka_data:/bitnami/kafka]
+    networks: [cosmochem]
+
+  gateway-service:
+    build: ./gateway-service
+    restart: unless-stopped
+    ports: ["8080:8080"]
+    env_file: .env
+    environment:
+      AUTH_SERVICE_URL: http://auth-service:8081
+      PRODUCT_SERVICE_URL: http://product-service:8082
+      QUOTE_SERVICE_URL: http://quote-service:8083
+      CONTENT_SERVICE_URL: http://content-service:8084
+      AUDIT_SERVICE_URL: http://audit-service:8086
+    depends_on: [auth-service, product-service, quote-service, content-service, audit-service]
+    networks: [cosmochem]
+
+  auth-service:
+    build: ./auth-service
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: auth
+      SPRING_FLYWAY_SCHEMAS: auth
+      SPRING_FLYWAY_DEFAULT_SCHEMA: auth
+    depends_on: [kafka]
+    networks: [cosmochem]
+
+  product-service:
+    build: ./product-service
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: product
+      SPRING_FLYWAY_SCHEMAS: product
+      SPRING_FLYWAY_DEFAULT_SCHEMA: product
+    depends_on: [redis, kafka]
+    networks: [cosmochem]
+
+  quote-service:
+    build: ./quote-service
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: quote
+      SPRING_FLYWAY_SCHEMAS: quote
+      SPRING_FLYWAY_DEFAULT_SCHEMA: quote
+    depends_on: [kafka]
+    networks: [cosmochem]
+
+  content-service:
+    build: ./content-service
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: content
+      SPRING_FLYWAY_SCHEMAS: content
+      SPRING_FLYWAY_DEFAULT_SCHEMA: content
+    depends_on: [redis, kafka]
+    networks: [cosmochem]
+
+  notification-service:
+    build: ./notification-service
+    restart: unless-stopped
+    env_file: .env
+    depends_on: [kafka]
+    networks: [cosmochem]
+
+  audit-service:
+    build: ./audit-service
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: audit
+      SPRING_FLYWAY_SCHEMAS: audit
+      SPRING_FLYWAY_DEFAULT_SCHEMA: audit
+    depends_on: [kafka]
+    networks: [cosmochem]
+
+volumes:
+  redis_data:
+  kafka_data:
+
+networks:
+  cosmochem:
+    driver: bridge
