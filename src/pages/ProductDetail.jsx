@@ -48,6 +48,8 @@ import vegetableSqualane from "../assets/vegetable-squalane.png";
 
 
 import "./ProductDetail.css";
+import { PRODUCT_SEED } from "../data/productData";
+import { getProducts } from "../lib/cosmochemStore";
 
 const productData = {
   "alpha-arbutin": {
@@ -475,9 +477,12 @@ function ProductDetail() {
   const navigate = useNavigate();
 
   const { slug } = useParams();
-
-  const product =
-    productData[slug] || productData["alpha-arbutin"];
+  const storedProducts = getProducts(PRODUCT_SEED);
+  const storedProduct = storedProducts.find((item) => item.slug === slug);
+  const product = {
+    ...(productData[slug] || productData["alpha-arbutin"]),
+    ...(storedProduct || {}),
+  };
 
   const [activeTab, setActiveTab] = useState("Description");
   const [activeImage, setActiveImage] = useState(product.image);

@@ -2,12 +2,7 @@ import { useState } from "react";
 import {
   ArrowRight,
   CheckCircle2,
-  Clock3,
   Headphones,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
   Send,
   ShieldCheck,
   Truck,
@@ -16,25 +11,8 @@ import {
 } from "lucide-react";
 
 import ContactImg from "../assets/Contact.png";
+import ContactInfo from "../components/ContactInfo";
 import "./Contact.css";
-
-const contactDetails = [
-  [
-    MapPin,
-    "Address",
-    "D-124 Noida-sector:07, UP-201302",
-  ],
-  [
-    Mail,
-    "Email",
-    "sales@innovisioncosmochem.com",
-  ],
-  [
-    Clock3,
-    "Working Hours",
-    "Mon - Fri: 9:30 AM - 6:30 PM\nSaturday and Sunday: Closed",
-  ],
-];
 
 const benefits = [
   [
@@ -250,21 +228,7 @@ function Contact() {
             </h2>
           </div>
 
-          <div className="contact-details">
-            {contactDetails.map(([Icon, title, text]) => (
-              <div className="contact-detail" key={title}>
-                <Icon size={21} />
-
-                <span>
-                  <strong>{title}</strong>
-
-                  {text.split("\n").map((line) => (
-                    <small key={line}>{line}</small>
-                  ))}
-                </span>
-              </div>
-            ))}
-          </div>
+          <ContactInfo showCompany />
 
           <div className="contact-follow">
             <strong>Follow Us</strong>
@@ -278,38 +242,13 @@ function Contact() {
           </div>
         </div>
 
-        {/* Quick Contact Cards */}
+        {/* Quick Contact */}
         <aside className="contact-quick-stack">
           <div className="quick-call">
             <h2>Quick Contact</h2>
-
-            <p>Need immediate assistance?</p>
-
-            <a href="tel:+919876543210">
-              <Phone size={15} />
-              Call Now
-            </a>
-          </div>
-
-          <div className="quick-whatsapp">
-            <MessageCircle size={30} />
-
-            <h2>
-              Chat on
-              <br />
-              <span>WhatsApp</span>
-            </h2>
-
-            <p>Get quick answers to your queries.</p>
-
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Chat Now
-              <ArrowRight size={14} />
-            </a>
+            <p>Reach our team directly from the contact details below.</p>
+            <ContactInfo compact mode="phone" />
+            <ContactInfo compact mode="whatsapp" />
           </div>
         </aside>
       </section>
@@ -356,14 +295,7 @@ function Contact() {
             <ArrowRight size={17} />
           </button>
 
-          <a
-            href="https://wa.me/919876543210"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <MessageCircle size={18} />
-            Chat on WhatsApp
-          </a>
+          <ContactInfo compact mode="whatsapp" />
         </div>
       </section>
     </main>

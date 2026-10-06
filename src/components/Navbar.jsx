@@ -1,16 +1,21 @@
+/* =========================================================
+   1. NAVBAR
+========================================================= */
+
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   UserRound,
   ChevronDown,
-  ArrowRight,
   Menu,
   X,
 } from "lucide-react";
 
-import logo from "../assets/logo.png";
+import { getSessionUser, getSiteConfig } from "../lib/cosmochemStore";
 
-
+/* =========================================================
+   1.1 INDUSTRY NAVIGATION
+========================================================= */
 
 const industryCategories = [
   { label: "Pharmaceuticals", path: "/industries/pharmaceuticals" },
@@ -19,33 +24,40 @@ const industryCategories = [
   { label: "Food", path: "/industries/food" },
 ];
 
+/* =========================================================
+   1.2 NAVBAR COMPONENT
+========================================================= */
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const [currentUser, setCurrentUser] = useState(() => {
-    const savedUser = localStorage.getItem("cosmochem-current-user");
-    return savedUser ? JSON.parse(savedUser) : null;
-  });
+  const [currentUser, setCurrentUser] = useState(() => getSessionUser());
+  const [siteConfig, setSiteConfig] = useState(() => getSiteConfig());
 
   useEffect(() => {
-    const refreshUser = () => {
-      const savedUser = localStorage.getItem("cosmochem-current-user");
-      setCurrentUser(savedUser ? JSON.parse(savedUser) : null);
-    };
+    const refreshUser = () => setCurrentUser(getSessionUser());
+    const refreshSite = () => setSiteConfig(getSiteConfig());
 
     window.addEventListener("cosmochem-auth-change", refreshUser);
     window.addEventListener("storage", refreshUser);
+    window.addEventListener("cosmochem-site-config-change", refreshSite);
 
     return () => {
       window.removeEventListener("cosmochem-auth-change", refreshUser);
       window.removeEventListener("storage", refreshUser);
+      window.removeEventListener("cosmochem-site-config-change", refreshSite);
     };
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
 
   const accountPath =
-    currentUser?.role === "admin" ? "/admin" : "/account";
+    currentUser?.role === "superadmin"
+      ? "/superadmin"
+      : currentUser?.role === "admin"
+      ? "/admin"
+      : currentUser?.role === "accountant"
+      ? "/accountant"
+      : "/account";
 
   const navLinkClass = ({ isActive }) =>
     isActive ? "active" : "";
@@ -53,60 +65,36 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="site-container navbar-inner">
-        {/* LOGO */}
-        <a href="/home" className="brand" onClick={closeMenu}>
-          <img src={logo} alt="CosmoChem" />
-        </a>
+        {/* ===================================================
+            2. BRANDING
+        =================================================== */}
 
-        {/* NAVIGATION */}
-        <nav className={`nav-menu ${menuOpen ? "nav-open" : ""}`}>
-          <NavLink to="/" 
-          className={navLinkClass} onClick={closeMenu}>
+        <NavLink to="/" className="brand" onClick={closeMenu}>
+          <strong className="brand-company">
+            {siteConfig.company}
+          </strong>
+          <span className="brand-tagline">
+            {siteConfig.tagline}
+          </span>
+        </NavLink>
+
+        {/* ===================================================
+            3. NAVIGATION
+        =================================================== */}
+
+        <nav className={"nav-menu " + (menuOpen ? "nav-open" : "")}>
+          <NavLink to="/" className={navLinkClass} onClick={closeMenu}>
             Home
           </NavLink>
 
-          <NavLink
-            to="/about"
-            className={navLinkClass}
-            onClick={closeMenu}
-          >
+          <NavLink to="/about" className={navLinkClass} onClick={closeMenu}>
             About Us
           </NavLink>
 
-          {/* PRODUCTS DROPDOWN */}
-          {/* <div className="nav-dropdown"> */}
-            {/* <div className="products-nav"> */}
-              <NavLink
-                to="/products"
-                className={navLinkClass}
-                onClick={closeMenu}
-              >
-                Products
-              </NavLink>
-{/* 
-              <button
-                type="button"
-                className="dropdown-toggle"
-                aria-label="Toggle products menu"
-              >
-                <ChevronDown size={13} />
-              </button>
-            </div> */}
+          <NavLink to="/products" className={navLinkClass} onClick={closeMenu}>
+            Products
+          </NavLink>
 
-            {/* <div className="dropdown-menu">
-              {productCategories.map((category) => (
-                <a
-                  href="/products#categories"
-                  key={category}
-                  onClick={closeMenu}
-                >
-                  {category}
-                </a>
-              ))}
-            </div>
-          </div> */}
-
-          {/* INDUSTRIES DROPDOWN */}
           <div className="nav-dropdown">
             <div className="industries-nav">
               <NavLink
@@ -128,51 +116,38 @@ function Navbar() {
 
             <div className="dropdown-menu">
               {industryCategories.map((industry) => (
-                <a
-                  href={industry.path}
+                <NavLink
+                  to={industry.path}
                   key={industry.label}
                   onClick={closeMenu}
                 >
                   {industry.label}
-                </a>
+                </NavLink>
               ))}
             </div>
           </div>
 
-          <NavLink
-            to="/certifications"
-            className={navLinkClass}
-            onClick={closeMenu}
-          >
+          <NavLink to="/certifications" className={navLinkClass} onClick={closeMenu}>
             Certifications
           </NavLink>
 
-          <NavLink
-            to="/gallery"
-            className={navLinkClass}
-            onClick={closeMenu}
-          >
+          <NavLink to="/gallery" className={navLinkClass} onClick={closeMenu}>
             Gallery
           </NavLink>
 
-          <NavLink
-            to="/contact"
-            className={navLinkClass}
-            onClick={closeMenu}
-          >
+          <NavLink to="/contact" className={navLinkClass} onClick={closeMenu}>
             Contact Us
           </NavLink>
 
-          <NavLink
-            to="/careers"
-            className={navLinkClass}
-            onClick={closeMenu}
-          >
+          <NavLink to="/careers" className={navLinkClass} onClick={closeMenu}>
             Careers
           </NavLink>
         </nav>
 
-        {/* RIGHT ACTIONS */}
+        {/* ===================================================
+            4. USER ACTIONS
+        =================================================== */}
+
         <div className="navbar-actions">
           <NavLink
             className="login-btn"
@@ -184,11 +159,13 @@ function Navbar() {
 
           <NavLink to="/quote" className="quote-btn">
             <span>Get Quote</span>
-            {/* <ArrowRight size={16} /> */}
           </NavLink>
         </div>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* ===================================================
+            5. MOBILE MENU
+        =================================================== */}
+
         <button
           type="button"
           className="mobile-menu-btn"

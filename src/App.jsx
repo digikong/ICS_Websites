@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route,Link  } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -29,13 +29,30 @@ import Careers from "./pages/Careers";
 
 // Other Pages
 import Quote from "./pages/Quote";
-import AdminDashboard from "./pages/AdminDashboard";
+import AdminPage from "./pages/AdminPage";
+import AccountantPage from "./pages/AccountantPage";
+import SuperadminPage from "./pages/SuperadminPage";
+import { ensureSystemUsers, getSessionUser, setPresence } from "./lib/cosmochemStore";
 
 function App() {
+  useEffect(() => {
+    ensureSystemUsers();
 
+    const session = getSessionUser();
+    if (!session || !["superadmin", "admin", "accountant"].includes(session.role)) {
+      return undefined;
+    }
 
+    setPresence("online");
+    const heartbeat = window.setInterval(() => setPresence("online"), 30000);
+    const offline = () => setPresence("offline");
 
-  
+    window.addEventListener("beforeunload", offline);
+    return () => {
+      window.clearInterval(heartbeat);
+      window.removeEventListener("beforeunload", offline);
+    };
+  }, []);
 
   return (
     <BrowserRouter>
@@ -119,14 +136,10 @@ function App() {
 
           <Route path="/signup" element={<Signup />} />
 
-          {/* ================= ADMIN ================= */}
-          <Route
-            path="/admin"
-            element={<AdminDashboard />}
-          />
-
-
-          <Route path="/quote" element={<Quote />} />
+          {/* ================= ROLE MANAGEMENT ================= */}
+          <Route path="/superadmin" element={<SuperadminPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/accountant" element={<AccountantPage />} />
         </Routes>
 
 

@@ -8,7 +8,6 @@ import {
   FlaskConical,
   Mail,
   MessageCircle,
-  Phone,
   RotateCcw,
   Send,
   ShieldCheck,
@@ -16,6 +15,9 @@ import {
 } from "lucide-react";
 
 import QuoteImg from "../assets/Quote.png";
+import ContactInfo from "../components/ContactInfo";
+import { PRODUCT_SEED } from "./Products";
+import { getProducts, getEnquiries, saveEnquiries } from "../lib/cosmochemStore";
 import "./Quote.css";
 
 const steps = [
@@ -75,6 +77,7 @@ const initialForm = {
 
 function Quote() {
   const [form, setForm] = useState(initialForm);
+  const products = getProducts(PRODUCT_SEED);
   const [fileName, setFileName] = useState("");
   const [sent, setSent] = useState(false);
 
@@ -87,6 +90,31 @@ function Quote() {
 
   const submit = (event) => {
     event.preventDefault();
+
+    const enquiries = getEnquiries([]);
+    saveEnquiries([
+      {
+        id: "ENQ-" + String(Date.now()).slice(-8),
+        product: form.product,
+        cas: form.cas,
+        quantity: form.quantity,
+        unit: form.unit,
+        packaging: form.packaging,
+        grade: form.grade,
+        date: form.date,
+        company: form.company,
+        person: form.person,
+        email: form.email,
+        phone: form.phone,
+        industry: form.industry,
+        city: form.city,
+        requirement: form.requirement,
+        status: "Pending",
+        createdAt: new Date().toISOString(),
+      },
+      ...enquiries,
+    ]);
+
     setSent(true);
   };
 
@@ -161,10 +189,9 @@ function Quote() {
                   }
                 >
                   <option disabled>-- Select Product --</option>
-                  <option>Acetic Acid</option>
-                  <option>Caustic Soda Flakes</option>
-                  <option>Hydrochloric Acid</option>
-                  <option>Sodium Hypochlorite</option>
+                  {products.map((item) => (
+                    <option key={item.slug} value={item.name}>{item.name}</option>
+                  ))}
                   <option>Custom Chemical</option>
                 </select>
               </Field>
@@ -419,25 +446,7 @@ function Quote() {
 
           <section className="quote-contact">
             <h2>Quick Contact</h2>
-
-            {/* <a href="tel:+916395468419">
-              <Phone size={20} />
-              +91 63954 68419
-            </a> */}
-
-            {/* <a href="mailto:sales@innovisioncosmochem.com">
-              <Mail size={20} />
-              sales@innovisioncosmochem.com
-            </a> */}
-
-            <a
-              href="https://wa.me/916395468419"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <MessageCircle size={20} />
-              Chat on WhatsApp
-            </a>
+            <ContactInfo compact />
           </section>
         </aside>
       </section>

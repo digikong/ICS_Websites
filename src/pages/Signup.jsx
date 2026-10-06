@@ -7,7 +7,7 @@ import {
   Heart,
   LockKeyhole,
   MessageCircle,
-  Phone,
+
   ShieldCheck,
   Truck,
   UserPlus,
@@ -16,6 +16,8 @@ import {
 
 import SignupImg from "../assets/Signup.png";
 import "./Signup.css";
+import ContactInfo from "../components/ContactInfo";
+import { getUsers, saveUsers, ensureSystemUsers } from "../lib/cosmochemStore";
 
 const heroBenefits = [
   [
@@ -120,16 +122,13 @@ function Signup() {
   const submit = (event) => {
     event.preventDefault();
 
+    ensureSystemUsers();
+
     const normalizedEmail = form.email.trim().toLowerCase();
+    const users = getUsers();
 
-    const users = JSON.parse(
-      localStorage.getItem("cosmochem-users") || "[]"
-    );
-
-    if (normalizedEmail === "admin@cosmochem.com") {
-      setMessage(
-        "This email is reserved for admin access. Please use another email."
-      );
+    if (users.some((user) => user.email === normalizedEmail)) {
+      setMessage("An account with this email already exists. Please login.");
       return;
     }
 
@@ -138,25 +137,19 @@ function Signup() {
       return;
     }
 
-    if (users.some((user) => user.email === normalizedEmail)) {
-      setMessage(
-        "An account with this email already exists. Please login."
-      );
-      return;
-    }
-
-    localStorage.setItem(
-      "cosmochem-users",
-      JSON.stringify([
-        ...users,
-        {
-          name: form.name,
-          company: form.company,
-          email: normalizedEmail,
-          password: form.password,
-        },
-      ])
-    );
+    saveUsers([
+      ...users,
+      {
+        id: Date.now().toString(),
+        name: form.name,
+        company: form.company,
+        email: normalizedEmail,
+        password: form.password,
+        role: "customer",
+        active: true,
+        createdAt: new Date().toISOString(),
+      },
+    ]);
 
     setMessage("Account created successfully. Welcome to CosmoChem!");
   };
@@ -316,7 +309,6 @@ function Signup() {
           </div>
         </div>
 
-        <div className="signup-or">OR</div>
 
         <div className="signup-benefits-side">
           <h2>Why Create an Account?</h2>
@@ -374,23 +366,9 @@ function Signup() {
           </span>
         </div>
 
-        <div>
-          <Phone size={27} />
+        <ContactInfo compact mode="phone" />
 
-          <span>
-            {/* <strong>+91 6395468419</strong> */}
-            Mon - Fri (9:30 AM - 6:30 PM)
-          </span>
-        </div>
-
-        <div>
-          <MessageCircle size={27} />
-
-          <span>
-            <strong>Chat on WhatsApp</strong>
-            Get instant support
-          </span>
-        </div>
+        <ContactInfo compact mode="whatsapp" />
       </section>
     </main>
   );
